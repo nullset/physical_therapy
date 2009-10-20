@@ -1,0 +1,19 @@
+.panel_wrapper div.current {
+	height: 230px;
+}
+
+#width, #height {
+	width: 50px;
+}
+
+#file {
+	width: 250px;
+}
+textarea {
+  width: 250px;
+  height: 100px;
+  overflow: auto;
+}
+td {
+  vertical-align: top;
+}

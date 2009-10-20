@@ -1,0 +1,53 @@
+!!!
+%html{:lang=>"en-US"}
+  %head
+    %meta{:charset=>"utf-8"}/
+    %title= @page_title || default_page_title
+    - @stylesheets.uniq.each do |stylesheet|
+      = stylesheet_link_tag stylesheet
+    = javascript_include_tag %w(admin/prototype admin/effects admin/lowpro admin/cookie admin/popup admin/status admin/utility admin/codearea admin/tabcontrol admin/ruledtable admin/sitemap admin/shortcuts admin/application), :cache => 'admin/all'
+    /[if lt IE 7]
+      = javascript_include_tag 'admin/pngfix'
+    - @javascripts.uniq.each do |javascript|
+      = javascript_include_tag javascript
+    - if @content_for_page_scripts
+      = javascript_tag @content_for_page_scripts
+    - if @content_for_page_css
+      %style{:type => "text/css"}= @content_for_page_css
+    = yield :meta
+  %body{:class=>body_classes.join(" ")}
+    #page
+      #header
+        - if logged_in?
+          #site_links
+            = %{Logged in as #{link_to h(current_user.name), edit_admin_preferences_path} &nbsp; (#{link_to "Logout", logout_path})}
+            &nbsp;
+            = link_to "View Site", root_path, :id=>"view_site"
+          %ul#navigation
+            - nav_tabs.each do |tab|
+              - if tab.visible?(current_user)
+                %li{:class=>('current' if current_tab?(tab))}
+                  %a{:href=>(tab.first.url if tab.first)}
+                    = tab.proper_name
+                  - if current_tab?(tab)
+                    %ul#nav_sub
+                      - tab.each do |sub_item|
+                        - if sub_item.visible?(current_user)
+                          %li
+                            %a{:href => sub_item.url, :class => current_item?(sub_item) ? 'current' : ''}>
+                              %span
+                                = sub_item.proper_name
+          #header_bottom
+            %div
+      #main
+        - if flash[:notice]
+          #notice
+            %p= flash[:notice]
+        - if flash[:error]
+          #error
+            %p= flash[:error]
+        #content
+          = find_and_preserve(yield)
+      - if @content_for_popups
+        #popups
+          = yield :popups
