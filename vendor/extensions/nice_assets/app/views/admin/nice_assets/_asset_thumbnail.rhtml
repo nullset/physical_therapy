@@ -1,0 +1,6 @@
+<% asset_html_id = Time.now.to_f.to_s.sub(/\./, '') -%>
+<span class="asset" id="asset-<%= asset_html_id %>">
+  <span class="asset-inner">
+    <%= render :partial => 'admin/nice_assets/asset', :object => asset_thumbnail, :locals => {:add_msg => add_msg, :delete_msg => delete_msg, :asset_html_id => asset_html_id} %>
+  </span>
+</span>

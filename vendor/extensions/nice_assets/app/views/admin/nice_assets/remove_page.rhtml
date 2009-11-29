@@ -1,0 +1,71 @@
+<% @stylesheets << 'admin/nice_assets' %>
+<% pages = pluralize(@page.children.count + 1, 'Page') -%>
+
+<h1 id="remove_article">Remove <%= pages %></h1>
+<p>Are you sure you want to <strong class="warning">permanently remove</strong> the following <%= pages.downcase %>?</p>
+<p><span class="caution">Will break links on these pages</span></p>
+
+<!-- <table id="site-map" class="index" cellpadding="0" cellspacing="0" border="0">
+  <tbody> -->
+
+<%
+def display_nodes(parent)
+  if @nodes == nil
+    @parent = parent
+    icon_name = @parent.virtual? ? "virtual-page" : "page"
+    @parent_icon = image(icon_name, :class => "icon", :alt => 'page-icon', :title => '', :align => 'center')
+    @ul_level = 0
+    @nodes = ''
+  end
+  if parent.children(true)
+    if parent.children.length > 0
+      @nodes += "<ul>\n"
+      @ul_level += 1
+      @dl = ''
+      parent.children.each do |child|
+        icon_name = child.virtual? ? "virtual-page" : "page"
+        icon = image(icon_name, :class => "icon", :alt => 'page-icon', :title => '', :align => 'center')
+        
+        @nodes += %{<li>#{icon} #{child.title} #{ linked_pages(child) } } # .collect{|pa| pa.page_id }.join(', ')  }}
+        if child.children(true)
+          display_nodes(child)
+        end
+      end
+      @nodes += "</li>\n"
+      if @ul_level > 2
+        @nodes += "</ul>\n"
+      end
+      # @nodes += "</ul>\n"
+      @ul_level -= 1
+      
+      # Don't close unopened <li>
+      if @ul_level > 0
+        @nodes += "</li>\n"
+      end
+    end
+  end
+  
+  return %{<ul id="page-nodes"><li>#{@parent_icon} #{@parent.title} #{linked_pages(@parent)} #{@nodes}</li></ul>}
+end
+
+def linked_pages(page)
+  list = []
+  linked_pages = Page.find(:all, :include => ['page_assets'], :conditions => ['page_assets.resource_type = ? and page_assets.resource_id = ?', 'Page', page.id])
+  linked_pages.each do |linked_page|
+    list << [linked_page.title, page_edit_url(:id => linked_page.id)]
+  end
+  if list.empty?
+    return ''
+  else
+    return "<span class=\"linked_pages\"><span class=\"caution\">referred to by #{linked_pages.length} #{pluralize(linked_pages.length, 'page')}: #{list.collect{ |title, url| link_to title, url }.join(', ')}</span></span>"
+  end
+end
+%>
+<%= display_nodes(@page) %>
+
+  <!-- </tbody>
+</table> -->
+
+<form method="post">
+  <p class="buttons"><%= submit_tag "Delete #{pages}", :class => 'button' %> or <%= link_to 'Cancel', page_index_url %></p>
+</form>

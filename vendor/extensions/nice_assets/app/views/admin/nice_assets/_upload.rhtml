@@ -1,0 +1,9 @@
+<div id="asset-uploads">
+	<%= render :partial => 'admin/nice_assets/upload_div', :locals => {:id => Time.now.to_f.to_s.sub(/\./, ''), :style => nil, :page => @page.id} %>
+	<%= render :partial => 'admin/nice_assets/upload_div', :locals => {:id => Time.now.to_f.to_s.sub(/\./, ''), :style => 'display: none;', :page => @page.id} %>
+	<%= link_to_remote 'add another file', { :url => {:controller => 'admin/nice_assets', :action => 'add_asset_form', :id => @page.id, :style => 'display: none;' }, :before => %{elems = $('asset-uploads').getElementsByClassName('uploader'); elem = elems[elems.length - 1]; Element.show(elem); } }, :id => 'add-another-file' %>
+</div>
+
+<div class="panel-buttons">
+	<input type="submit" class="button" onclick="uploadAllAssets(); return false" value="Upload Files" /> or <span id="close-asset-upload" class="close-link">Cancel</span>
+</div>

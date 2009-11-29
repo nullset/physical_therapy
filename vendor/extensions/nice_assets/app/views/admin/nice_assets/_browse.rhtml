@@ -1,0 +1,32 @@
+<div id="browse-actions">
+	<div id="asset-browse-loading" class="loading-indicator" style="display: none;"><div id="asset-browse-message"></div></div>
+
+	<div id="asset-filters">
+		<span id="asset-image"><%= link_to_remote 'Images', :url => {:controller => 'admin/nice_assets', :action => 'get_assets', :type => 'image', :size => '100'}, :after => 'toggleFilterHighlight(this.parentNode)'
+		 %></span>
+		<span id="asset-pdf"><%= link_to_remote 'PDFs', :url => {:controller => 'admin/nice_assets', :action => 'get_assets', :type => 'pdf'}, :after => 'toggleFilterHighlight(this.parentNode)' %></span>
+		<span id="asset-video"><%= link_to_remote 'Video', :url => {:controller => 'admin/nice_assets', :action => 'get_assets', :type => 'video'}, :after => 'toggleFilterHighlight(this.parentNode)' %></span>
+		<span id="asset-audio"><%= link_to_remote 'Audio', :url => {:controller => 'admin/nice_assets', :action => 'get_assets', :type => 'audio'}, :after => 'toggleFilterHighlight(this.parentNode)' %></span>
+		<span id="asset-flash"><%= link_to_remote 'Flash', :url => {:controller => 'admin/nice_assets', :action => 'get_assets', :type => 'flash'}, :after => 'toggleFilterHighlight(this.parentNode)' %></span>
+		<span id="asset-other"><%= link_to_remote 'Other', :url => {:controller => 'admin/nice_assets', :action => 'get_assets', :type => 'other'}, :after => 'toggleFilterHighlight(this.parentNode)' %></span>
+	</div>
+
+	<span id="asset-sort">
+		Sort by:
+		<select id="browse-order" disabled="disabled">
+			<option value="created_at desc">date (newest to oldest)</option>	
+			<option value="created_at asc">date (oldest to newest)</option>
+			<option value="filename asc">file name</option>
+			<option value="filename desc">file name (reverse order)</option>
+			<option value="title asc">title</option>
+			<option value="title desc">title (reverse order)</option>
+		</select>
+	</span>
+	<div class="clear"></div>
+</div>
+
+<div id="asset-browse-notice" class="notice" style="display: none;"></div>
+
+<div id="asset-list" class="asset-list"></div>
+
+<div id="asset-pagination"></div>

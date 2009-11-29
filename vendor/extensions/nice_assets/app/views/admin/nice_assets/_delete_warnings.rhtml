@@ -1,0 +1,10 @@
+<ul>
+<% delete_warnings.each do |page| %>
+<li><%= link_to_unless_current "#{page.title} <small> &#8212; #{page.url}</small>", page_edit_url(:id => page), :popup => true  %></li>
+<% end %>
+</ul>
+<div class="clear">
+    <%= link_to_remote 'Force delete', :url => {:controller => 'admin/nice_assets', :action => 'destroy', :id => asset.id, :html_id => html_id, :force => true}, :before => %{ if (window.confirm("Are you sure you want to delete this file? Deleting now will likely leave references on your website to a file that no longer exists.")) { clearAssetBrowserMessage(); } else { return false; } } %>
+  <%= link_to_remote 'Try again', :url => {:controller => 'admin/nice_assets', :action => 'destroy', :id => asset.id, :html_id => html_id}, :before => "clearAssetBrowserMessage();" %>
+  <a href="" onclick="$('asset-browse-loading').hide(); clearAssetBrowserMessage(); return false;">Cancel</a>
+</div>

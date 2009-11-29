@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title><%= @page_title || default_page_title %></title>
+
+<%- # NiceAssets extensions -%>
+<%- if Radiant::Extension.descendants.collect { |extension| extension.to_s}.include?("TinymceFilterExtension") -%>
+  <%- ['extensions/tiny_mce/tiny_mce_src', 'extensions/tiny_mce/tiny_mce_settings'].each {|script| @javascripts << script} -%>
+<%- end -%>
+<%- @stylesheets << 'admin/nice_assets' -%>
+
+<%- @stylesheets << 'lightwindow' -%>
+<%- @javascripts << 'lightWindow' -%>
+<%- # Adds Yahoo UI components for modal windows
+
+## With internet access
+# @stylesheets += [
+#   'http://yui.yahooapis.com/2.2.0/build/container/assets/container.css',
+#   '/javascripts/yui/build/menu/assets/menu.css'
+# ]
+# @javascripts += [
+#   'http://yui.yahooapis.com/2.2.0/build/yahoo-dom-event/yahoo-dom-event.js',    # Dependencies
+#   'http://yui.yahooapis.com/2.2.0/build/animation/animation-min.js',            # OPTIONAL: Animation (only required if enabling Animation)
+#   'http://yui.yahooapis.com/2.2.0/build/dragdrop/dragdrop-min.js',              # OPTIONAL: Drag & Drop (only required if enabling Drag & Drop)
+#   'http://yui.yahooapis.com/2.2.0/build/connection/connection-min.js',          # OPTIONAL: Connection (only required if performing asynchronous submission)
+#   'http://yui.yahooapis.com/2.2.0/build/container/container-min.js',            # Source file
+#   'http://yui.yahooapis.com/2.2.0/build/menu/menu-min.js',                      # Menu file
+#   'extensions/nice_assets/nice_assets.js'                                       # NiceAssets
+# ]
+
+## Localhost only
+@stylesheets += [
+  '/javascripts/yui/build/container/assets/container.css',
+  '/javascripts/yui/build/menu/assets/menu.css'
+]
+@javascripts += [
+  # 'http://localhost:3000/javascripts/yui/build/yahoo-dom-event/yahoo-dom-event.js',   # Dependencies
+  'yui/build/yahoo/yahoo.js',   # Dependencies
+  'yui/build/dom/dom.js',   # Dependencies
+  'yui/build/event/event.js',   # Dependencies
+  'yui/build/animation/animation-min.js',           # OPTIONAL: Animation (only required if enabling Animation)
+  'yui/build/dragdrop/dragdrop-min.js',             # OPTIONAL: Drag & Drop (only required if enabling Drag & Drop)
+  # 'yui/build/connection/connection-min.js',         # OPTIONAL: Connection (only required if performing asynchronous submission)
+  'yui/build/container/container-min.js',             # Source file
+  'yui/build/menu/menu-min.js',                     # Menu file
+
+  # 'extensions/nice_assets/context-menu.js',
+  'extensions/nice_assets/nice_assets.js'                     # NiceAssets
+]
+-%>
+<%-
+# get rid of old asset content types and sorting order that we've sorted on before on other pages 
+session[:content_types], session[:sort_order], session[:expanded_nodes] = nil, nil, nil
+-%>
+<%- # END NiceAssets extensions -%>
+
+<%- @stylesheets.each do |stylesheet| -%>
+    <%= stylesheet_link_tag stylesheet %>
+<%- end -%>
+
+<%- @javascripts.each do |script| -%>
+    <%= javascript_include_tag script %>
+<%- end -%>
+    <!--[if lt IE 7]>
+    <script defer type="text/javascript" src="/javascripts/pngfix.js"></script>
+    <![endif]-->
+<%- if @content_for_page_scripts -%>
+    <script type="text/javascript">
+    // <![CDATA[
+<%= @content_for_page_scripts %>
+    // ]]>
+    </script>
+<%- end -%>
+<%- if @content_for_page_css -%>
+    <style type="text/css" media="screen">
+<%= @content_for_page_css -%>
+    </style>
+	<%- end -%>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div id="site-title"><%= link_to_unless_current title, admin_url %></div>
+        <div id="site-subtitle"><%= subtitle %></div>
+<%- if logged_in? -%>
+        <div id="navigation">
+          <%= links_for_navigation %>
+        </div>
+<%- end -%>
+      </div>
+      <hr class="hidden" />
+      <div id="main">
+<%- if flash[:notice] -%>
+        <div id="notice">
+          <p><%= flash[:notice] %></p>
+        </div>
+<%- end -%>
+<%- if flash[:error] -%>
+        <div id="error">
+          <p><%= flash[:error] %></p>
+        </div>
+<%- end -%>
+        <div id="content">
+<%= yield %>
+        </div>
+      </div>
+      <hr class="hidden" />
+      <div id="footer">
+        <p>This site was made with Ruby and is powered by <a href="http://radiantcms.org">Radiant CMS</a>
+          version <%= Radiant::Version %><% if Radiant.loaded_via_gem? %> (gem)<% end %>.</p>
+        <p id="site-links">
+<% if logged_in? -%>
+  <% if admin? -%>
+          <%= nav_link_to 'Users', user_index_url %>
+          <span class="separator"> | </span>
+          <%= nav_link_to 'Extensions', extension_index_url %>
+  <% else -%>
+          <%= nav_link_to 'Preferences', user_preferences_url %>
+  <% end -%>
+          <span class="separator"> | </span>
+          <%= nav_link_to 'Log Out', logout_url %>
+          <span class="separator"> | </span>
+<% end -%>
+          <%= link_to image('view-site.gif', :alt => 'View Site', :title => '', :align => 'center'), homepage_url %>
+        </p>
+      </div>
+    </div>
+<% if @content_for_popups -%>
+    <div id="popups">
+<%= yield :popups %>
+    </div>
+<% end -%>
+  </body>
+</html>

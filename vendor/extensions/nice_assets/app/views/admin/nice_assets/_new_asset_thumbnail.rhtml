@@ -1,0 +1,8 @@
+<% asset_html_id = Time.now.to_f.to_s.sub(/\./, '') -%>
+<span class="asset new-asset" id="asset-<%= asset_html_id %>">
+  <span class="asset-inner">
+  	<%= render :partial => 'admin/nice_assets/asset', :object => new_asset_thumbnail, :locals => {:add_msg => add_msg, :delete_msg => delete_msg, :asset_html_id => asset_html_id} %>
+	  <input type="hidden" name="page[new_assets][][resource_id]" value="<%= new_asset_thumbnail.id %>" />
+	  <input type="hidden" name="page[new_assets][][resource_type]" value="<%= new_asset_thumbnail.class.to_s %>" />
+	</span>
+</span>
