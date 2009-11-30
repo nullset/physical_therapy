@@ -231,23 +231,12 @@ function text_input_method(index, filter) {
   }
 }
 
-Event.observe(window, 'load', init_load_tiny_mce, false);
 
-function init_load_tiny_mce(){
-	// loads TinyMce editor if "TinyMce" is the selected text filter
-  // check to see if we are working with a page or with a snippet
-  if ($('part[0][filter_id]'))
-  {
-    parts = $('pages').getElementsByTagName('textarea');
-    for (var i = 0; i < parts.length; i++)
-    {
-      if ($F('part[' + i + '][filter_id]') == 'TinyMce') {
-        text_input_method((i + 1), 'TinyMce');
-      }
+document.observe("dom:loaded", function() {
+  $$('div.part').each(function(d) {
+    part = d.parentNode.getAttribute('data-caption');
+    if ($F("part_" + part + "_filter_id") == 'TinyMce') {
+      text_input_method(part, 'TinyMce')
     }
-  } else if ($('snippet[filter_id]')) {
-    if ($F('snippet[filter_id]') == 'TinyMce') {
-      text_input_method(null, 'TinyMce');
-    }
-  }
-}
+  });
+});
