@@ -10,6 +10,7 @@ module PageAttachmentsInterface
   module InstanceMethods
     def add_page_attachment_partials
       @buttons_partials ||= []
+      @buttons_partials << "nice_assets_box"
       @buttons_partials << "attachments_box"
       include_javascript 'admin/dragdrop'
       include_javascript 'admin/page_attachments'

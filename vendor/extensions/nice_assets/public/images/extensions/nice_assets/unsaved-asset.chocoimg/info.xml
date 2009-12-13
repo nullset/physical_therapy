@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ChocoDocument chocoversion="1.0" width="10" height="130" depth="32">
-    <Layer selectlay="0" name="Document" uid="0" blendmode="CISourceOverCompositing" opacity="100" rotation="0" scalex="1" scaley="1" offx="0" offy="0" visible="1" enabled="0" mainstack="0" hidestarget="0" scalesync="1" constraint="0" mask="0">
-        <Layer selectlay="0" name="Background" uid="1" blendmode="CISourceOverCompositing" opacity="100" rotation="0" scalex="1" scaley="1" offx="0" offy="0" visible="1" enabled="1" mainstack="0" hidestarget="0" scalesync="1" constraint="0" mask="0" type="pix"></Layer>
-        <Layer selectlay="0" name="UNSAVED" uid="2" blendmode="CISourceOverCompositing" opacity="100" rotation="90" scalex="1" scaley="1" offx="-81" offy="142" visible="1" enabled="1" mainstack="1" hidestarget="0" scalesync="1" constraint="0" mask="0" type="txt" txtw="175" txth="16" autolabel="1"></Layer>
-    </Layer>
-</ChocoDocument>
