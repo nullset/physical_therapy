@@ -1,0 +1,145 @@
+<style type="text/css" media="screen">
+  #nice_assets_box {
+    clear: both;
+    background: #f5f1e2;
+  }
+  #nice_assets_box h3 {
+    background: #eae3c5;
+    color: #000;
+    padding: 5px 10px;
+    font-size: 93%;
+  }
+  
+  #nice_assets_box .attachments {
+    height: 220px;
+    overflow: auto;
+  }
+  #nice_assets_box li {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 160px;
+    height: 160px;
+    background: #fff;
+    text-align: center;
+    position: relative;
+    border: 1px solid #ccc;
+    color: #000;
+  }
+  #nice_assets_box li .wrapper {
+    overflow: hidden;
+  }
+  #nice_assets_box li .delete {
+    position: absolute;
+    right: -4px;
+    top: -6px;
+    cursor: pointer;
+  }
+  #nice_assets_box li * {
+    font-size: 77%;
+  }
+  #nice_assets_box li * * {
+    font-size: 100%;
+  }
+</style>
+
+<div id="nice_assets_box">
+  <h3>Attachments <%= "(#{@page.attachments.length})" unless @page.attachments.blank? %></h3>
+  <div class="attachments">
+    <ul>
+      <%= render :partial => 'asset', :collection => @page.attachments %>
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<div id="nice_assets_uploader"></div>
+
+<script type="text/javascript" charset="utf-8">
+
+  // window.AUTH_TOKEN = '#{form_authenticity_token}'; // Fix rails authentication issue
+  // 
+  // jQuery(document).ajaxSend(function(event, request, settings) {
+  //   if (typeof(window.AUTH_TOKEN) == "undefined") return;
+  //   // IE6 fix for http://dev.jquery.com/ticket/3155
+  //   if (settings.type == 'GET' || settings.type == 'get') return;
+  // 
+  //   settings.data = settings.data || "";
+  //   settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(window.AUTH_TOKEN);
+  // });
+
+  // Ajax.Base.prototype.initialize = Ajax.Base.prototype.initialize.wrap(
+  //    function(p, options){
+  //      p(options);
+  //      this.options.parameters = this.options.parameters || {};
+  //      this.options.parameters.authenticity_token = window._token || '';
+  //    }
+  // );
+
+  <%- session_key_name = ActionController::Base.session_options[:session_key] -%>
+  jQuery(document).ready(function() {
+    jQuery('#nice_assets_uploader').uploadify({
+      'uploader': '/images/extensions/nice_assets/uploadify.swf',
+      'script': '/admin/nice_assets/create',
+      'folder': '/path/to/uploads-folder',
+      'cancelImg': '/images/extensions/nice_assets/cancel.png',
+      'auto': true,
+      'fileDataName': 'uploaded_data',
+      'scriptData': {
+        '<%= session_key_name %>' : '<%= u cookies[session_key_name] %>',
+        'authenticity_token'  : '<%= u form_authenticity_token if protect_against_forgery? %>'
+      }
+    });
+  });
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  function insertAsset(elem, image) {
+    // var parts = $('pages').getElementsByClassName('page');
+    var pages = $$('#pages .page');
+    var parts = $$('#pages .part');
+    for (i = 0; i < parts.length; i++) {
+     if (pages[i].getStyle('display') != 'none') {
+       var filter = parts[i].getElementsByTagName('select')[0];
+       var textarea = parts[i].getElementsByTagName('textarea')[0];
+       if (image == true) {
+         answer = confirm("Insert with link to original file?");
+         if (answer) {
+           var content = elem.readAttribute('rel_with_link');
+         } else {
+           var content = elem.readAttribute('rel');
+         }
+       } else {
+         var content = elem.getAttribute('rel');
+       }
+       if (filter.value == 'TinyMce') {
+         tinyMCE.execCommand('mceInsertContent',false,content);
+       } else {
+         textarea.focus();
+         insertAtCursor(textarea, content);
+       }
+     }
+    }
+  }
+  
+  function insertAtCursor(myField, myValue) {
+    //IE support
+    if (document.selection) {
+      myField.focus();
+      sel = document.selection.createRange();
+      sel.text = myValue;
+    }
+
+    //MOZILLA/NETSCAPE support
+    else if (myField.selectionStart || myField.selectionStart == '0') {
+      var startPos = myField.selectionStart;
+      var endPos = myField.selectionEnd;
+      myField.value = myField.value.substring(0, startPos)
+                    + myValue
+                    + myField.value.substring(endPos, myField.value.length);
+    } else {
+      myField.value += myValue;
+    }
+  }
+  
+</script>

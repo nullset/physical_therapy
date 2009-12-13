@@ -60,7 +60,7 @@ a {
 /* Radiant specific rules */
 /* added Feb. 23, 2007 */
 .mceItemRadiantCode {
-  background: url(/images/extensions/tiny_mce/radiant-code.png) no-repeat;
+  background: url(/images/extensions/tiny_mce_filter/radiant-code.png) no-repeat;
   height: 18px;
   border: none;
 }

@@ -1,4 +1,22 @@
 class Admin::NiceAssetsController < ApplicationController
+  
+  skip_before_filter :authenticate, :authorize
+  
+  protect_from_forgery :except => [:create]
+  # FIXME : need to figure out why authorization isn't happening
+  # http://railstips.org/2009/7/21/uploadify-and-rails23
+  # http://code.google.com/p/swfupload/
+  # http://gist.github.com/11753
+  # http://www.ruby-forum.com/topic/167917
+  
+  def create
+    g params.to_yaml
+    params[:upload] = {:uploaded_data => params[:uploaded_data]}
+    @attachable_file = PageAttachment.new(params[:upload])
+    debugger
+    @attachable_file.save!
+    render :nothing => true
+  end
 
   # browse function
   # find assets of a particular type(s)
@@ -40,19 +58,19 @@ class Admin::NiceAssetsController < ApplicationController
     end
   end
   
-  def create
-    frame = params[:id]
-    asset = NiceAsset.create! params[:asset]
-    responds_to_parent do
-      render :update do |page|
-        page.insert_html :top, "page-assets", :partial => 'admin/nice_assets/new_asset_thumbnail', :object => asset, :locals => {:add_msg => "Add to this page at cursor position", :delete_msg => 'Remove from the asset clipboard'}
-        page.remove("upload-form-#{frame}")
-        page.remove("upload-image-#{frame}")
-        page.insert_html :top, "upload_#{frame}", %{<img src="/images/extensions/nice_assets/accept.png" width="16" height="16" alt="" /> <strong>#{asset.filename}</strong> uploaded}
-        page.visual_effect :highlight, "upload_#{frame}"
-      end
-    end
-  end
+  # def create
+  #   frame = params[:id]
+  #   asset = NiceAsset.create! params[:asset]
+  #   responds_to_parent do
+  #     render :update do |page|
+  #       page.insert_html :top, "page-assets", :partial => 'admin/nice_assets/new_asset_thumbnail', :object => asset, :locals => {:add_msg => "Add to this page at cursor position", :delete_msg => 'Remove from the asset clipboard'}
+  #       page.remove("upload-form-#{frame}")
+  #       page.remove("upload-image-#{frame}")
+  #       page.insert_html :top, "upload_#{frame}", %{<img src="/images/extensions/nice_assets/accept.png" width="16" height="16" alt="" /> <strong>#{asset.filename}</strong> uploaded}
+  #       page.visual_effect :highlight, "upload_#{frame}"
+  #     end
+  #   end
+  # end
   
   def browse_pages
     if session[:expanded_nodes].nil?

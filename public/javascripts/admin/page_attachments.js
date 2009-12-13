@@ -1,14 +1,14 @@
 Event.addBehavior({
 
-  '#attachment_list': function() {
-    Sortable.create('attachment_list', {
-      onUpdate: function(container) {
-        container.select(".attachment").each(function(e, i) {
-          e.down('input[name*="position"]').setValue(i+1);
-        });
-      }
-    });
-  },
+  // '#attachment_list': function() {
+  //   Sortable.create('attachment_list', {
+  //     onUpdate: function(container) {
+  //       container.select(".attachment").each(function(e, i) {
+  //         e.down('input[name*="position"]').setValue(i+1);
+  //       });
+  //     }
+  //   });
+  // },
   
   '#attachments:click': function(event) {
     var target = $(event.target);

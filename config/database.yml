@@ -13,6 +13,11 @@
 development:
   adapter: sqlite3
   database: db/db_production.db
+  # adapter: mysql
+  # database: panorama
+  # username: root
+  # password: 
+  # host: localhost
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.
@@ -27,6 +32,14 @@ test:
 production:
   adapter: mysql
   database: panorama_production
+  username: root
+  password: 
+  host: localhost
+
+
+legacy:
+  adapter: mysql
+  database: panorama
   username: root
   password: 
   host: localhost

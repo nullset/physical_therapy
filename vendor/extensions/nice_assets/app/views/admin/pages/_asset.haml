@@ -1,0 +1,15 @@
+%li{:id => "attachment_#{asset.id}", :class =>"attachment clearfix"}
+  %div{:class => "wrapper"}
+    = hidden_field_tag "page[attachments_attributes][#{asset_counter}][id]", asset.id
+    = hidden_field_tag "page[attachments_attributes][#{asset_counter}][_delete]", "0"
+    = hidden_field_tag "page[attachments_attributes][#{asset_counter}][position]", asset.position
+    %div= image_tag "admin/minus.png", :alt => "delete", :class => 'delete'
+    - if asset.thumbnails.empty?
+      %div{:style => "border: 1px solid #fc0; color: #000"}
+        %img{:src => "/images/admin/avatar_32x32.png", :onclick => "insertAsset(this, false)", :rel => link_to(asset.filename, asset.public_filename)}
+    - else
+      - alt = asset.title.blank? ? " " : asset.title
+      = image_tag(asset.public_filename("icon"), :class => 'thumbnail', :onclick => "insertAsset(this, true)", :rel => image_tag(asset.public_filename('icon'), :alt => alt), :rel_with_link => link_to(image_tag(asset.public_filename('icon'), :alt => alt), asset.public_filename))
+    - unless asset.title.blank?
+      %p= h asset.short_title
+    = link_to asset.filename, asset.public_filename

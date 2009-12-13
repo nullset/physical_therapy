@@ -8,6 +8,8 @@
 require File.join(File.dirname(__FILE__), 'boot')
 
 require 'radius'
+require 'g'
+require "ruby-debug"
 
 Radiant::Initializer.run do |config|
   # Skip frameworks you're not going to use (only works if using vendor/rails).
