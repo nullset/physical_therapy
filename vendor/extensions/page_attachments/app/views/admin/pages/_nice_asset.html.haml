@@ -1,9 +1,9 @@
 - asset = nice_asset
 %li{:id => "attachment_#{asset.id}", :class =>"attachment clearfix"}
   %div{:class => "wrapper"}
-    = hidden_field_tag "page[attachments_attributes][#{nice_asset_counter}][id]", asset.id
-    = hidden_field_tag "page[attachments_attributes][#{nice_asset_counter}][_delete]", "0"
-    = hidden_field_tag "page[attachments_attributes][#{nice_asset_counter}][position]", asset.position
+    =# hidden_field_tag "page[attachments_attributes][#{nice_asset_counter}][id]", asset.id
+    =# hidden_field_tag "page[attachments_attributes][#{nice_asset_counter}][_delete]", "0"
+    =# hidden_field_tag "page[attachments_attributes][#{nice_asset_counter}][position]", asset.position
     %div= image_tag "admin/minus.png", :alt => "delete", :class => 'delete'
     - if asset.thumbnails.empty?
       %div{:style => "border: 1px solid #fc0; color: #000"}

@@ -13,3 +13,13 @@ ActionController::Base.session = {
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rake db:sessions:create")
 # ActionController::Base.session_store = :active_record_store
+
+
+class ActionController::Session::CookieStore
+  def load_session(env)
+    request = Rack::Request.new(env)
+    session_data = request.cookies[@key] || request.params[@key]
+    data = unmarshal(session_data) || persistent_session_id!({})
+    [data[:session_id], data]
+  end
+end

@@ -25,6 +25,7 @@
     position: relative;
     border: 1px solid #ccc;
     color: #000;
+    line-height: 1.2;
   }
   #nice_assets_box li .wrapper {
     overflow: hidden;
@@ -41,17 +42,22 @@
   #nice_assets_box li * * {
     font-size: 100%;
   }
+  #nice_assets_box img {
+    display: block;
+    margin: 0 auto;
+  }
 </style>
 
 <div id="nice_assets_box">
   <h3>Attachments <%= "(#{@page.attachments.length})" unless @page.attachments.blank? %></h3>
   <div class="attachments">
-    <ul>
+    <ul id="nice_assets">
       <%= render :partial => 'nice_asset', :collection => @page.attachments %>
     </ul>
     <div class="clearfix"></div>
   </div>
 </div>
+
 
 <div id="nice_assets_uploader"></div>
 
@@ -77,20 +83,28 @@
         // );
 
   <%- session_key_name = ActionController::Base.session_options[:session_key] -%>
-  // jQuery(document).ready(function() {
-  //   jQuery('#nice_assets_uploader').uploadify({
-  //     'uploader': '/images/extensions/nice_assets/uploadify.swf',
-  //     'script': '/admin/nice_assets/create',
-  //     'folder': '/path/to/uploads-folder',
-  //     'cancelImg': '/images/extensions/nice_assets/cancel.png',
-  //     'auto': true,
-  //     'fileDataName': 'uploaded_data',
-  //     'scriptData': {
-  //       '<%= session_key_name %>' : '<%= u cookies[session_key_name] %>',
-  //       'authenticity_token'  : '<%= u form_authenticity_token if protect_against_forgery? %>'
-  //     }
-  //   });
-  // });
+  jQuery(document).ready(function() {
+    jQuery('#nice_assets_uploader').uploadify({
+      'uploader': '/images/extensions/nice_assets/uploadify.swf',
+      'script': '/page_attachments/create',
+      'folder': '/path/to/uploads-folder',
+      'cancelImg': '/images/extensions/nice_assets/cancel.png',
+      'auto': true,
+      'fileDataName': 'uploaded_data',
+      'scriptData': {
+        // '_method': 'put',
+        '<%= session_key_name %>' : '<%= u cookies[session_key_name] %>',
+        'authenticity_token'  : '<%= u form_authenticity_token if protect_against_forgery? %>',
+        'page_id' : '<%= @page.id %>',
+        'user_id' : '<%= current_user.id %>'
+      },
+      'onComplete': function(event, queueID, fileObj, response, data) {
+        // alert(event + " :: " + queueID + " :: " + fileObj + " :: " + response + " :: " + data);
+        jQuery('#nice_assets').append(response);
+           // $('#filesUploaded').append('<a href='+fileObj.filePath+'>'+response+'</a><br>');
+      }
+    });
+  });
 </script>
 
 <script type="text/javascript" charset="utf-8">
