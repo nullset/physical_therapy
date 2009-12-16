@@ -21,7 +21,8 @@ class PageAttachmentsController < ApplicationController
       :updated_by => @user
     )
 
-    @nice_asset.content_type = MIME::Types.type_for(@nice_asset.public_filename)
+    mime_type = MIME::Types.type_for(@nice_asset.public_filename)
+    @nice_asset.content_type = mime_type unless mime_type.blank?
     @nice_asset.save!
     # render :update do |page|
     #   # page.insert_html :bottom, 'nice_assets', :partial => 'admin/pages/nice_asset'

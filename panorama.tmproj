@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/database.yml</string>
+	<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_assets_box.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,248 +21,86 @@
 	<integer>295</integer>
 	<key>metaData</key>
 	<dict>
-		<key>config/database.yml</key>
+		<key>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>20</integer>
+				<integer>64</integer>
 				<key>line</key>
-				<integer>41</integer>
+				<integer>24</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>public/javascripts/admin/page_attachments.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>11</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>11</integer>
-			</dict>
-		</dict>
-		<key>vendor/extensions/nice_assets/app/models/nice_assets_interface.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
-				<integer>10</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/nice_assets/app/views/admin/pages/_asset.haml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>51</integer>
-				<key>line</key>
-				<integer>14</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>51</integer>
-				<key>line</key>
-				<integer>14</integer>
-			</dict>
-		</dict>
-		<key>vendor/extensions/nice_assets/app/views/admin/pages/_nice_assets_box.rhtml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>20</integer>
-				<key>line</key>
-				<integer>23</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/nice_assets/nice_assets_extension.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>72</integer>
-				<key>line</key>
-				<integer>132</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>108</integer>
-		</dict>
-		<key>vendor/extensions/nice_assets/public/javascripts/extensions/nice_assets/nice_assets.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>77</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>58</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>77</integer>
-			</dict>
-		</dict>
-		<key>vendor/extensions/page_attachments/app/models/page_attachment.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>104</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/page_attachments/app/models/page_attachment_associations.rb</key>
+		<key>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset.html.haml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>31</integer>
 				<key>line</key>
-				<integer>8</integer>
+				<integer>13</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>8</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>35</integer>
-				<key>line</key>
-				<integer>8</integer>
-			</dict>
 		</dict>
-		<key>vendor/extensions/page_attachments/app/models/page_attachments_interface.rb</key>
+		<key>vendor/extensions/page_attachments/app/views/admin/pages/_nice_assets_box.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>70</integer>
 				<key>line</key>
-				<integer>19</integer>
+				<integer>104</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>19</integer>
-			</dict>
+			<integer>57</integer>
 		</dict>
 		<key>vendor/extensions/page_attachments/page_attachments_extension.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>54</integer>
 				<key>line</key>
 				<integer>20</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>31</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>38</integer>
+				<key>line</key>
+				<integer>20</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>60</integer>
+				<key>line</key>
+				<integer>20</integer>
+			</dict>
 		</dict>
-		<key>vendor/extensions/page_attachments/vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb</key>
+		<key>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>19</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -272,18 +110,11 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>vendor/extensions/page_attachments/vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb</string>
-		<string>vendor/extensions/page_attachments/app/models/page_attachments_interface.rb</string>
-		<string>vendor/extensions/nice_assets/app/models/nice_assets_interface.rb</string>
-		<string>public/javascripts/admin/page_attachments.js</string>
-		<string>vendor/extensions/nice_assets/public/javascripts/extensions/nice_assets/nice_assets.js</string>
-		<string>vendor/extensions/nice_assets/nice_assets_extension.rb</string>
+		<string>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</string>
 		<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
-		<string>config/database.yml</string>
-		<string>vendor/extensions/page_attachments/app/models/page_attachment_associations.rb</string>
-		<string>vendor/extensions/page_attachments/app/models/page_attachment.rb</string>
-		<string>vendor/extensions/nice_assets/app/views/admin/pages/_asset.haml</string>
-		<string>vendor/extensions/nice_assets/app/views/admin/pages/_nice_assets_box.rhtml</string>
+		<string>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset.html.haml</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_assets_box.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
