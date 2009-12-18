@@ -1,0 +1,559 @@
+#wrapper {
+  width: 960px;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px dotted #333333;
+  border-width: 0 1px;
+  font-family: Verdana, arial, helvetica, clean, sans-serif;
+  font-size: 85%;
+  line-height: 1.5;
+}
+#wrapper #wrapper_inner {
+  margin: 0 20px;
+  text-align: left;
+}
+#header img { display: block; }
+#content {
+  float: right;
+  width: 715px;
+  margin-bottom: 18px;
+  color: #666666;
+  position: relative;
+}
+#content h1 { color: #26aefe; }
+#content h2 { color: #26aefe; }
+#content h1.logo {
+  position: absolute;
+  left: -205px;
+  top: -15px;
+}
+#content h1.logo a {
+  display: block;
+  width: 205px;
+  height: 100px;
+}
+#content a { color: #666666; }
+#content a:hover { color: #26aefe; }
+#content #top_nav {
+  border-bottom: 1px dotted #333333;
+  margin-bottom: 22px;
+  height: 29px;
+}
+#content #top_nav a {
+  background: url(/images/layout/top_nav.png) no-repeat;
+  height: 27px;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 2px solid #ffffff;
+}
+#content #top_nav a:hover { border-bottom: 2px solid #a6874e; }
+#content #top_nav a.about_panorama {
+  width: 103px;
+  background-position: 0 0;
+}
+#content #top_nav a.our_physicians {
+  width: 90px;
+  background-position: -123px 0;
+}
+#content #top_nav a.our_locations {
+  width: 87px;
+  background-position: -233px 0;
+}
+#content #top_nav a.online_community {
+  width: 116px;
+  background-position: -341px 0;
+}
+#content #top_nav * {
+  color: #a6874e;
+  font-weight: bold;
+}
+#content #top_nav ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+#content #top_nav ul li {
+  display: inline;
+  margin-right: 20px;
+  position: relative;
+}
+#content #top_nav ul li.last { margin-right: 0; }
+#content #top_nav ul #search { display: inline-block; }
+#content #top_nav ul #search div {
+  position: relative;
+  height: 27px;
+}
+#content #top_nav ul #search label {
+  background: url(/images/layout/top_nav.png) -483px -2px no-repeat;
+  display: inline-block;
+  width: 41px;
+  height: 27px;
+  cursor: pointer;
+}
+#content #top_nav ul #search input {
+  width: 120px;
+  border: 1px solid #a6874e;
+  color: #000000;
+  font-weight: normal;
+  position: relative;
+  top: -10px;
+}
+#content #top_nav ul #search button {
+  background: url(/images/layout/top_nav.png) -652px -2px no-repeat;
+  border: none;
+  width: 16px;
+  height: 27px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -22px;
+}
+#content .content_text {
+  margin-left: 25px;
+  width: 462px;
+  float: left;
+}
+#content .content_text h1 { margin: 0 0 10px; }
+#content .content_text h2 { margin: 0 0 10px; }
+#content .content_text h2 {
+  font-size: 116%;
+  text-transform: uppercase;
+  color: #000000 !important;
+}
+#content .content_text #breadcrumbs {
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: #999999;
+  font-size: 93%;
+  text-transform: uppercase;
+}
+#content .content_text #breadcrumbs a {
+  white-space: nowrap;
+  color: #999999;
+  text-decoration: none;
+}
+#content .content_text #breadcrumbs a:hover { text-decoration: underline; }
+#content .content_text .right.breakout {
+  float: right;
+  margin-right: -23px;
+}
+#content .content_text .box_container {
+  border: 1px dotted #333333;
+  border-top: none;
+  width: 462px;
+  position: relative;
+}
+#content .content_text .box_container .line {
+  position: absolute;
+  border-left: 1px dotted #333333;
+  left: 230px;
+  top: 0;
+}
+#content .content_text .box_container h3 {
+  margin: 0 0 4px;
+  color: #987a43 !important;
+}
+#content .content_text .box_container .box {
+  border-top: 1px dotted #333333;
+  width: 230px;
+  float: left;
+}
+#content .content_text .box_container .box.left {
+  float: left;
+  border-left: 1px dotted #333333;
+}
+#content .content_text .box_container .box.right {
+  float: right;
+  border-right: 1px dotted #333333;
+}
+#content .content_text .box_container .inner { padding: 10px 18px; }
+#content .content_text .box_container ul.inline {
+  margin: 0;
+  padding: 0;
+}
+#content .content_text .box_container ul.inline li {
+  float: left;
+  list-style: none;
+  width: 80px;
+  margin-right: 15px;
+}
+#content .content_text .box_container .physician_list { background: #e4dbca; }
+#content .content_text .box_container .physician_list ul {
+  margin: 0;
+  padding: 0;
+}
+#content .content_text .box_container .physician_list ul li {
+  list-style: none;
+  margin: 4px 0;
+}
+#content .content_text .box_container .physician_list ul li a { text-decoration: none; }
+#content .content_text .box_container .physician_list ul li a:hover { text-decoration: underline; }
+#content .content_text ul.headshots {
+  margin: 0;
+  padding: 0;
+}
+#content .content_text ul.headshots li {
+  float: left;
+  width: 200px;
+  height: 150px;
+  list-style: none;
+  margin: 0 10px 10px 0;
+  text-align: center;
+}
+#content .content_text ul.headshots li br { display: none; }
+#content .content_text ul.headshots li img {
+  margin: 0 auto;
+  display: block;
+  padding: 2px;
+  border: 1px solid #999999;
+}
+#content .content_text .box-left {
+  float: left;
+  width: 45%;
+  clear: left;
+}
+#content .content_text .box-right {
+  float: right;
+  width: 45%;
+  clear: right;
+}
+#content .content_context {
+  width: 205px;
+  float: right;
+}
+#content .content_context .box {
+  border: 1px dotted #333333;
+  margin-bottom: 20px;
+  position: relative;
+}
+#content .content_context .box .inner { margin: 0 12px; }
+#content .content_context .box .inner h2 { font-size: 108%; }
+#content .content_context .sand { background: #ede7dc; }
+#content .content_context .sand h2 { color: #a6874e; }
+#content .content_context .blue { background: #d4efff; }
+#content .content_context .blue h2 { color: #26aefe; }
+#content .content_context .blue a { color: #26aefe; }
+#content .content_context .box.community {
+  background: #d4efff url(/images/layout/boxes.png) 0 0 no-repeat;
+  height: 153px;
+  position: relative;
+}
+#content .content_context .box.community ul {
+  margin: 0;
+  padding: 0;
+}
+#content .content_context .box.community ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#content .content_context .box.community a {
+  position: absolute;
+  z-index: 1;
+}
+#content .content_context .box.community .page_curl {
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: url(/images/layout/boxes.png) -153px 0 no-repeat;
+}
+#content .content_context .box.community .join {
+  width: 124px;
+  height: 40px;
+  left: 10px;
+  top: 10px;
+  background: url(/images/layout/boxes.png) -10px -10px no-repeat;
+}
+#content .content_context .box.community .go {
+  width: 18px;
+  height: 15px;
+  left: 77px;
+  top: 108px;
+}
+#content .content_context .box.community .facebook {
+  width: 21px;
+  height: 21px;
+  left: 121px;
+  top: 123px;
+}
+#content .content_context .box.community .linkedin {
+  width: 21px;
+  height: 21px;
+  left: 148px;
+  top: 123px;
+}
+#content .content_context .box.community .twitter {
+  width: 21px;
+  height: 21px;
+  left: 174px;
+  top: 123px;
+}
+#content .content_context .green { background: #eef0cc; }
+#content .content_context .green h2 { color: #aab300; }
+#content .content_context .box.appointment {
+  background: #eef0cc url(/images/layout/boxes.png) 0 -153px no-repeat;
+  height: 67px;
+}
+#content .content_context .box.share {
+  background: #e3e4e4 url(/images/layout/boxes.png) 0 -220px no-repeat;
+  height: 67px;
+  position: relative;
+}
+#content .content_context .box.share ul {
+  margin: 0;
+  padding: 0;
+}
+#content .content_context .box.share ul li { list-style: none; }
+#content .content_context .box.share ul li a.email {
+  display: block;
+  width: 90px;
+  height: 28px;
+  position: absolute;
+  left: 10px;
+  bottom: 6px;
+}
+#content .content_context .box.share ul li.print {
+  width: 87px;
+  height: 28px;
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+}
+#sidebar {
+  width: 205px;
+  float: left;
+  color: #a6874e;
+}
+#sidebar .logo { display: block; }
+#sidebar #main_menu {
+  background: #582863;
+  width: 205px;
+  margin: 0;
+}
+#sidebar #main_menu h2 {
+  background: #a6874e url(/images/layout/h2_sidebar.png) 0 0;
+  height: 30px;
+  margin: 0;
+  color: #ffffff;
+}
+#sidebar #main_menu ul {
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-size: 100%;
+}
+#sidebar #main_menu ul li {
+  list-style: none;
+  border-bottom: 1px dotted #ffffff;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+#sidebar #main_menu ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 1px 20px;
+}
+#sidebar #main_menu ul li a:hover { text-decoration: underline; }
+#sidebar h2 {
+  background: #a6874e url(/images/layout/h2_sidebar.png) 0 0;
+  height: 30px;
+  margin: 0;
+}
+#sidebar h2 .inverted {
+  color: #ffffff;
+  text-shadow: #a6874e 0px 0px 10px;
+}
+#sidebar h2.patient_resources { background-position: 0 -30px; }
+#sidebar h2.online_services {
+  background-position: 0 -60px;
+  margin-bottom: 10px;
+}
+#sidebar h2.learn_more { background-position: 0 -90px; }
+#sidebar h2.referring_physicians { background-position: 0 -120px; }
+#sidebar a {
+  text-decoration: none;
+  color: #a6874e;
+}
+#sidebar a:hover { text-decoration: underline; }
+#sidebar ul {
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+#sidebar ul li { margin-bottom: 5px; }
+#sidebar #online_services {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+#sidebar #online_services li {
+  list-style: none;
+  margin: 3px 0 3px 20px;
+}
+#sidebar #online_services a {
+  padding-left: 28px;
+  background-image: url(/images/layout/service_icons.png);
+  background-repeat: no-repeat;
+  display: block;
+  min-height: 23px;
+  line-height: 23px;
+}
+#sidebar #online_services .bills { background-position: 0 0; }
+#sidebar #online_services .appointment { background-position: 0 -26px; }
+#sidebar #online_services .forms { background-position: 0 -52px; }
+#sidebar #online_services .prescription { background-position: 0 -78px; }
+#sidebar #online_services .staff { background-position: 0 -104px; }
+#footer {
+  border-top: 1px dotted #333333;
+  padding-top: 12px;
+  color: #a6874e;
+}
+#footer a {
+  color: #a6874e;
+  text-decoration: none;
+}
+#footer a:hover { text-decoration: underline; }
+#footer ul { margin: 0 0 5px 0; }
+#footer ul li {
+  display: inline;
+  border-left: 1px solid #a6874e;
+  margin-left: 4px;
+  padding-left: 6px;
+}
+#footer ul li:first-child {
+  border: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+#footer ul.subnav { font-size: 85%; }
+body._home #header {
+  background: #582863 url(/images/header/home.jpg) right bottom no-repeat;
+  height: 260px;
+}
+body._home #sidebar #main_menu ul { height: 115px; }
+body._home .overview { position: relative; }
+body._home .overview .line {
+  border-bottom: 1px dotted #333333;
+  position: absolute;
+  left: 0;
+  top: 190px;
+  width: 459px;
+  z-index: 1;
+}
+body._home .overview ul {
+  margin: 0;
+  padding-top: 20px;
+  float: left;
+}
+body._home .overview ul li {
+  float: left;
+  width: 152px;
+  height: 238px;
+  list-style: none;
+  border: 1px dotted #333333;
+  border-width: 0 1px 1px 0;
+  background: url(/images/layout/home_overview.jpg) 0 top no-repeat;
+  cursor: pointer;
+}
+body._home .overview ul li .inner {
+  margin: 5px 10px 10px;
+  position: absolute;
+  left: -1000em;
+}
+body._home .overview ul li:first-child { border-left: 1px dotted #333333; }
+body._home .overview ul li h3 {
+  margin: 0 0 8px;
+  font-weight: normal;
+  color: #26aefe;
+}
+body._home .overview ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+}
+body._home .overview ul #more_about_panorama:hover { background-position: 0 bottom; }
+body._home .overview ul #more_patient_education { background-position: -153px top; }
+body._home .overview ul #more_patient_education:hover { background-position: -153px bottom; }
+body._home .overview ul #more_payment_options { background-position: -306px top; }
+body._home .overview ul #more_payment_options:hover { background-position: -306px bottom; }
+body._sports-medicine #header {
+  background: url(/images/header/sports_medicine.jpg);
+  height: 100px;
+}
+body._sports-medicine #main_menu ul li a.sports-medicine { background: #738539; }
+body._sports-medicine #content .content_text h1 { color: #738539; }
+body._sports-medicine #content .content_text h2 { color: #738539; }
+body._sports-medicine #content .content_text h3 { color: #738539; }
+body._sports-medicine #content .content_text h4 { color: #738539; }
+body._sports-medicine #content .content_text h5 { color: #738539; }
+body._sports-medicine #content .content_text h6 { color: #738539; }
+body._sports-medicine #content .content_text h1 { line-height: 1; }
+#doctor_excerpt img { float: left; }
+#doctor_excerpt .text {
+  float: right;
+  width: 100px;
+  font-size: 93%;
+}
+#doctor_excerpt .text h3 {
+  margin: 0 0 7px;
+  color: #582863;
+}
+#doctor_excerpt .text a {
+  color: #582863;
+  text-decoration: none;
+}
+#doctor_excerpt .text a:hover { text-decoration: underline; }
+#ie_upgrade {
+  background: #5e121c;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+}
+#ie_upgrade .inner {
+  width: 960px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+#ie_upgrade .inner p { margin: 0; }
+#ie_upgrade .inner a {
+  color: #b77612;
+  font-size: 85%;
+}
+#ie_upgrade .inner ul {
+  margin: 10px 0 0 170px;
+  padding: 0;
+}
+#ie_upgrade .inner li {
+  float: left;
+  list-style: none;
+  margin: 0 10px;
+  width: 100px;
+  text-align: center;
+}
+a { cursor: pointer; }
+.clear { clear: both; }
+.access {
+  position: absolute;
+  left: -1000em;
+}
+.cufon-active body._home #content .content_text h1 {
+  font-weight: normal;
+  font-size: 182%;
+}
+.cufon-active body._home #content .content_text h2 {
+  font-weight: normal;
+  font-size: 182%;
+}
+.cufon-active #content .content_text h1 {
+  font-weight: normal;
+  font-size: 348%;
+  line-height: 1;
+}
+.cufon-active #content .box_container h3 { font-size: 116%; }
+.cufon-active #content .content_context .box .inner h2 {
+  font-size: 153.9%;
+  font-weight: normal;
+  line-height: 1;
+  margin: 10px 0;
+}

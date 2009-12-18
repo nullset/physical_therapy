@@ -17,6 +17,9 @@ class PageAttachmentsExtension < Radiant::Extension
     Page.class_eval {
       include PageAttachmentAssociations
       include PageAttachmentTags
+      
+      has_many :page_associations
+      has_many :page_attachments, :through => :page_associations
     }
     UserActionObserver.send :include, ObservePageAttachments
     Admin::PagesController.send :include, PageAttachmentsInterface
@@ -47,46 +50,47 @@ class PageAttachmentsExtension < Radiant::Extension
       
       def replace_html_images
         unless self.content.blank?
-          doc = Nokogiri::HTML.fragment(self.content)
+          content = self.content.gsub(/(<\/?r:.*?>)/, '<!--\1-->')  # Nokogiri pukes on radiant tags, have to comment them out
+          doc = Nokogiri::HTML.fragment(content)
           images = doc.css('img')
           images.each do |img|
             width = img.attribute('width').to_s.to_i == 0 ? nil : img.attribute('width').to_s.to_i
             height = img.attribute('height').to_s.to_i == 0 ? nil : img.attribute('height').to_s.to_i
             src = img.attribute('src')
           
-
-            file_id_components = src.to_s.scan(/^.*?([0-9]{4})\/([0-9]{4}).*?$/).first
-            file_id = (file_id_components.first.to_i * 10000) + (file_id_components.last.to_i)
-
-            size_conditions = []
-            size_conditions << "width = #{width}" unless width.blank?
-            size_conditions << "height = #{height}" unless height.blank?
-            size_conditions.collect! {|c| " and #{c}"}
+            file_id_components = src.to_s.scan(/^\/page_attachments\/?([0-9]{4})\/([0-9]{4}).*?$/).first
+            if file_id_components
+              file_id = (file_id_components.first.to_i * 10000) + (file_id_components.last.to_i)
           
-            image = PageAttachment.find(:first, :conditions => ["parent_id = ?#{size_conditions}", file_id])
-            if image
-              thumbnail_name = image.thumbnail
-            else
-              orig_image = PageAttachment.find(file_id)
-              size = "#{width}x#{height}"
-              g size
-              image = orig_image.create_or_update_thumbnail(orig_image.full_filename, size, size )
-            end
-            unless image.thumbnail == 'icon'
-              image.update_attributes(:filename => "#{File.basename(image.parent.filename, '.*')}_#{image.width}x#{image.height}#{File.extname(image.parent.filename)}", :thumbnail => "#{image.width}x#{image.height}")
-            end
+              size_conditions = []
+              size_conditions << "width = #{width}" unless width.blank?
+              size_conditions << "height = #{height}" unless height.blank?
+              size_conditions.collect! {|c| " and #{c}"}
           
-
-            img.set_attribute('src', image.public_filename)
-            img.set_attribute('width', image.width.to_s) unless image.width.blank?
-            img.set_attribute('height', image.height.to_s) unless image.height.blank?
-
-            # Clean 'style' attribute of all width/height values. Depending on the browser these could get set incorrectly and persist across saves.
-            style = img.attribute('style')
-            sanitized_style = style.to_s.gsub(/(width|height):[^;]*;?\s?/, '')
-            img.set_attribute('style', sanitized_style)
+              image = PageAttachment.find(:first, :conditions => ["parent_id = ?#{size_conditions}", file_id])
+              if image
+                thumbnail_name = image.thumbnail
+              else
+                orig_image = PageAttachment.find(file_id)
+                size = "#{width}x#{height}"
+                image = orig_image.create_or_update_thumbnail(orig_image.full_filename, size, size )
+              end
+              unless image.thumbnail == 'icon'
+                image.update_attributes(:filename => "#{File.basename(image.parent.filename, '.*')}_#{image.width}x#{image.height}#{File.extname(image.parent.filename)}", :thumbnail => "#{image.width}x#{image.height}")
+              end
+          
+          
+              img.set_attribute('src', image.public_filename)
+              img.set_attribute('width', image.width.to_s) unless image.width.blank?
+              img.set_attribute('height', image.height.to_s) unless image.height.blank?
+          
+              # Clean 'style' attribute of all width/height values. Depending on the browser these could get set incorrectly and persist across saves.
+              style = img.attribute('style')
+              sanitized_style = style.to_s.gsub(/(width|height):[^;]*;?\s?/, '')
+              img.set_attribute('style', sanitized_style)
+            end
           end
-          doc.to_s
+          doc.to_s.gsub(/<!--(<\/?r:.*?>)-->/, '\1')
         end
       end
      

@@ -1,5 +1,7 @@
 class PageAttachment < ActiveRecord::Base
-  acts_as_list :scope => :page_id
+  # acts_as_list :scope => :page_id
+  has_many :page_associations
+  has_many :pages, :through => :page_associations
   has_attachment :storage => :file_system,
                  :thumbnails => defined?(PAGE_ATTACHMENT_SIZES) && PAGE_ATTACHMENT_SIZES || {:icon => '100x100>'},
                  :max_size => 10.megabytes
@@ -11,7 +13,7 @@ class PageAttachment < ActiveRecord::Base
   belongs_to :updated_by,
              :class_name => 'User',
              :foreign_key => 'updated_by'
-  belongs_to :page
+  # belongs_to :page
 
   def short_filename(wanted_length = 15, suffix = ' ...')
           (self.filename.length > wanted_length) ? (self.filename[0,(wanted_length - suffix.length)] + suffix) : self.filename
