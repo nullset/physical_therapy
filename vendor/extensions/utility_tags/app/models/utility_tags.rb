@@ -29,4 +29,85 @@ module UtilityTags
     title_as_name = "#{parts.delete_at(1)} #{parts.delete_at(0)}, #{parts.join(', ')}"
   end
 
+  desc %{
+    Causes the tags referring to a parts's attributes to refer to the current part.
+  
+    *Usage:*
+    
+    <pre><code><r:part>...</r:part></code></pre>
+  }
+  tag 'part' do |tag|
+    tag.locals.part = tag.globals.part
+    raise tag.inspect
+    tag.expand
+  end
+  # 
+  # [:part_content].each do |method|
+  #   desc %{
+  #     Renders the @#{method}@ attribute of the current part.
+  #   }
+  #   tag method.to_s do |tag|
+  #     tag.locals.part.send(method)
+  #   end
+  # end
+  # 
+  desc %{
+    Gives access to a page's parts.
+  
+    *Usage:*
+    
+    <pre><code><r:parts>...</r:parts></code></pre>
+  }
+  tag 'parts' do |tag|
+    tag.locals.parts = tag.locals.page.parts
+    tag.expand
+  end
+  
+  tag 'part_content' do |tag|
+    part = tag.locals.part
+    tag.globals.page.render_snippet(part) # unless part.nil?
+  end
+  
+
+  desc %{
+    Cycles through each of the page parts, collects according to "matches" attribute
+
+    *Usage:*
+    
+    <pre><code><r:parts [match="regexp"] [order="name1,name2,..."]>
+     ...
+    </r:parts>
+    </code></pre>
+  }
+  tag 'parts:names' do |tag|
+    match = tag.attr.has_key?('match') ? tag.attr['match'] : '.*'
+    order = tag.attr.has_key?('order') ? tag.attr['order'] : nil
+    
+    order_names = []
+    unless order.blank?
+      order_names = order.split(/,/).collect {|o| o.strip }
+    end
+
+    result = []
+    parts = tag.locals.parts.find_all {|part| part.name =~ /#{match}/ }
+    order_names.each do |name|
+      part = parts.detect {|part| part.name == name } unless parts.blank?
+      if part
+        tag.locals.part = part
+        result << tag.expand
+        # result << part.content
+        parts.delete(part)
+      end
+    end
+    if parts
+      parts.each do |part|
+        tag.locals.part = part
+        result << tag.expand
+        # result << part.content
+      end
+    end
+    result
+  end
+  
 end
+

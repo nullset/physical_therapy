@@ -188,7 +188,7 @@
         left: 230px;
         top: 0;
       }
-      h3 {
+      h2 {
         margin: 0 0 4px;
         color: #987a43 !important;
       }
@@ -269,7 +269,16 @@
       width: 45%;
       clear: right;
     }
+    #left_box {
+      float: left;
+      width: 45%;
+    }
+    #right_box {
+      float: right;
+      width: 45%;
+    }
   }
+  
   .content_context {
     width: 205px;
     float: right;
@@ -724,14 +733,16 @@ a {
     }
   }
   #content {
+    h1, h2, h3 {
+      line-height: 1;
+    }
     .content_text {
       h1 {
         font-weight: normal;
         font-size: 348%;
-        line-height: 1;
       }
     }
-    .box_container h3 {
+    .box_container h2 {
       font-size: 116%;
     }
 /*    #content {

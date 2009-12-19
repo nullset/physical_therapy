@@ -149,7 +149,7 @@
   left: 230px;
   top: 0;
 }
-#content .content_text .box_container h3 {
+#content .content_text .box_container h2 {
   margin: 0 0 4px;
   color: #987a43 !important;
 }
@@ -216,6 +216,14 @@
   float: right;
   width: 45%;
   clear: right;
+}
+#content .content_text #left_box {
+  float: left;
+  width: 45%;
+}
+#content .content_text #right_box {
+  float: right;
+  width: 45%;
 }
 #content .content_context {
   width: 205px;
@@ -545,12 +553,14 @@ a { cursor: pointer; }
   font-weight: normal;
   font-size: 182%;
 }
+.cufon-active #content h1 { line-height: 1; }
+.cufon-active #content h2 { line-height: 1; }
+.cufon-active #content h3 { line-height: 1; }
 .cufon-active #content .content_text h1 {
   font-weight: normal;
   font-size: 348%;
-  line-height: 1;
 }
-.cufon-active #content .box_container h3 { font-size: 116%; }
+.cufon-active #content .box_container h2 { font-size: 116%; }
 .cufon-active #content .content_context .box .inner h2 {
   font-size: 153.9%;
   font-weight: normal;
