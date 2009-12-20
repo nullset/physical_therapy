@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
+	<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,105 +21,47 @@
 	<integer>295</integer>
 	<key>metaData</key>
 	<dict>
-		<key>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</key>
+		<key>public/stylesheets/panorama.less</key>
 		<dict>
 			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>64</integer>
-				<key>line</key>
-				<integer>24</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/page_attachments/app/models/page_association.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
 				<integer>21</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>744</integer>
 			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>709</integer>
 		</dict>
-		<key>vendor/extensions/page_attachments/app/models/page_attachment.rb</key>
+		<key>public/stylesheets/tinymce.css</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>29</integer>
+				<integer>15</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>18</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset.html.haml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>31</integer>
-				<key>line</key>
-				<integer>13</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/page_attachments/db/migrate/002_add_page_attachments_fields.rb</key>
+		<key>vendor/extensions/conditional_tags/lib/conditional_tags/page_tags_ext.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>23</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/page_attachments/db/migrate/003_create_page_associations.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>33</integer>
-				<key>line</key>
-				<integer>9</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>21</integer>
 		</dict>
 		<key>vendor/extensions/page_attachments/page_attachments_extension.rb</key>
 		<dict>
@@ -154,14 +96,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>82</integer>
+				<integer>18</integer>
 				<key>line</key>
-				<integer>17</integer>
+				<integer>81</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>57</integer>
 		</dict>
 		<key>vendor/radiant/app/models/standard_tags.rb</key>
 		<dict>
@@ -170,27 +112,27 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>467</integer>
+				<integer>352</integer>
 			</dict>
 			<key>columnSelection</key>
 			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>256</integer>
+			<integer>327</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>451</integer>
+				<integer>350</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>467</integer>
+				<integer>352</integer>
 			</dict>
 		</dict>
 	</dict>
@@ -198,14 +140,11 @@
 	<array>
 		<string>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</string>
 		<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
-		<string>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</string>
-		<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset.html.haml</string>
+		<string>vendor/extensions/conditional_tags/lib/conditional_tags/page_tags_ext.rb</string>
 		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
-		<string>vendor/extensions/page_attachments/db/migrate/002_add_page_attachments_fields.rb</string>
-		<string>vendor/extensions/page_attachments/db/migrate/003_create_page_associations.rb</string>
-		<string>vendor/extensions/page_attachments/app/models/page_attachment.rb</string>
-		<string>vendor/extensions/page_attachments/app/models/page_association.rb</string>
 		<string>vendor/radiant/app/models/standard_tags.rb</string>
+		<string>public/stylesheets/panorama.less</string>
+		<string>public/stylesheets/tinymce.css</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
