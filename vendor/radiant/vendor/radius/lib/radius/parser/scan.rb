@@ -16,7 +16,7 @@ module Radius
       @cursor = 0
       @tagstart = 0
       @nodes = ['']
-      remainder = data.dup
+      remainder = data.dup rescue []
 
       until remainder.length == 0
         p = perform_parse(prefix, remainder)

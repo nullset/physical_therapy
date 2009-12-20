@@ -50,7 +50,7 @@ class PageAttachmentsExtension < Radiant::Extension
       
       def replace_html_images
         unless self.content.blank?
-          content = self.content.gsub(/(<\/?r:.*?>)/, '<!--\1-->')  # Nokogiri pukes on radiant tags, have to comment them out
+          content = self.content.gsub(/(<\/?r:.*?>)/) {|s| CGI.escape(s)}  # Nokogiri pukes on radiant tags, have to comment them out
           doc = Nokogiri::HTML.fragment(content)
           images = doc.css('img')
           images.each do |img|
@@ -90,7 +90,7 @@ class PageAttachmentsExtension < Radiant::Extension
               img.set_attribute('style', sanitized_style)
             end
           end
-          doc.to_s.gsub(/<!--(<\/?r:.*?>)-->/, '\1')
+          doc.to_s.gsub(/%3C(%2F)?r%3A(.*?)%3E/) {|s| CGI.unescape(s) } # re-convert <r:whatever> tags
         end
       end
      

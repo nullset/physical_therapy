@@ -41,16 +41,7 @@ module UtilityTags
     raise tag.inspect
     tag.expand
   end
-  # 
-  # [:part_content].each do |method|
-  #   desc %{
-  #     Renders the @#{method}@ attribute of the current part.
-  #   }
-  #   tag method.to_s do |tag|
-  #     tag.locals.part.send(method)
-  #   end
-  # end
-  # 
+  
   desc %{
     Gives access to a page's parts.
   
@@ -68,10 +59,10 @@ module UtilityTags
     tag.globals.page.render_snippet(part) # unless part.nil?
   end
   
-
+  
   desc %{
     Cycles through each of the page parts, collects according to "matches" attribute
-
+  
     *Usage:*
     
     <pre><code><r:parts [match="regexp"] [order="name1,name2,..."]>
@@ -87,7 +78,7 @@ module UtilityTags
     unless order.blank?
       order_names = order.split(/,/).collect {|o| o.strip }
     end
-
+  
     result = []
     parts = tag.locals.parts.find_all {|part| part.name =~ /#{match}/ }
     order_names.each do |name|
