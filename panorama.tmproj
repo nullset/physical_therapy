@@ -21,6 +21,50 @@
 	<integer>295</integer>
 	<key>metaData</key>
 	<dict>
+		<key>config/database.yml</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>24</integer>
+				<key>line</key>
+				<integer>33</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>config/environment.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>85</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>37</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>77</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>85</integer>
+			</dict>
+		</dict>
 		<key>public/stylesheets/panorama.less</key>
 		<dict>
 			<key>caret</key>
@@ -49,6 +93,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>vendor/extensions/conditional_tags/README</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>38</integer>
+				<key>line</key>
+				<integer>22</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>vendor/extensions/conditional_tags/lib/conditional_tags/page_tags_ext.rb</key>
 		<dict>
 			<key>caret</key>
@@ -68,14 +126,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>52</integer>
+				<integer>53</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>41</integer>
+			<integer>29</integer>
 		</dict>
 		<key>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</key>
 		<dict>
@@ -96,14 +154,72 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>18</integer>
+				<integer>77</integer>
 				<key>line</key>
-				<integer>81</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>57</integer>
+			<integer>51</integer>
+		</dict>
+		<key>vendor/extensions/variables/README</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>81</integer>
+				<key>line</key>
+				<integer>15</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>1</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>47</integer>
+				<key>line</key>
+				<integer>15</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>81</integer>
+				<key>line</key>
+				<integer>15</integer>
+			</dict>
+		</dict>
+		<key>vendor/radiant/app/models/file_not_found_page.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>20</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/radiant/app/models/page.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>234</integer>
 		</dict>
 		<key>vendor/radiant/app/models/standard_tags.rb</key>
 		<dict>
@@ -135,6 +251,20 @@
 				<integer>352</integer>
 			</dict>
 		</dict>
+		<key>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>35</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
@@ -142,6 +272,13 @@
 		<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
 		<string>vendor/extensions/conditional_tags/lib/conditional_tags/page_tags_ext.rb</string>
 		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
+		<string>vendor/extensions/variables/README</string>
+		<string>vendor/extensions/conditional_tags/README</string>
+		<string>vendor/radiant/app/models/file_not_found_page.rb</string>
+		<string>config/environment.rb</string>
+		<string>vendor/radiant/app/models/page.rb</string>
+		<string>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</string>
+		<string>config/database.yml</string>
 		<string>vendor/radiant/app/models/standard_tags.rb</string>
 		<string>public/stylesheets/panorama.less</string>
 		<string>public/stylesheets/tinymce.css</string>

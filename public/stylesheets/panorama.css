@@ -497,21 +497,36 @@ body._sports-medicine #content .content_text h4 { color: #738539; }
 body._sports-medicine #content .content_text h5 { color: #738539; }
 body._sports-medicine #content .content_text h6 { color: #738539; }
 body._sports-medicine #content .content_text h1 { line-height: 1; }
-#doctor_excerpt img { float: left; }
-#doctor_excerpt .text {
+ul#doctor_excerpt {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 20em;
+}
+ul#doctor_excerpt li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  width: 179px;
+  left: -1000em;
+}
+ul#doctor_excerpt li:first-child { left: 0; }
+ul#doctor_excerpt img { float: left; }
+ul#doctor_excerpt .text {
   float: right;
   width: 100px;
   font-size: 93%;
 }
-#doctor_excerpt .text h3 {
+ul#doctor_excerpt .text h3 {
   margin: 0 0 7px;
   color: #582863;
 }
-#doctor_excerpt .text a {
+ul#doctor_excerpt .text a {
   color: #582863;
   text-decoration: none;
 }
-#doctor_excerpt .text a:hover { text-decoration: underline; }
+ul#doctor_excerpt .text a:hover { text-decoration: underline; }
 #ie_upgrade {
   background: #5e121c;
   border-bottom: 1px solid #ffffff;

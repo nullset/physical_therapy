@@ -653,7 +653,22 @@ body._sports-medicine {
 
 /* end PAGE SPECIFIC */
 
-#doctor_excerpt {
+ul#doctor_excerpt {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 20em;
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    width: 179px;
+    left: -1000em;
+    :first-child {
+      left: 0;
+    }
+  }
   img {
     float: left;
   }
