@@ -125,7 +125,6 @@ module UtilityTags
 
     page = tag.locals.page
     excerpt = page.part(name).content rescue nil
-    puts "----> #{excerpt.inspect}"
     if excerpt
       doc = Nokogiri::HTML.fragment(excerpt)
       excerpted_text = doc.css('p')

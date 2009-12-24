@@ -158,6 +158,7 @@
   width: 230px;
   float: left;
 }
+#content .content_text .box_container .box a img { display: block; }
 #content .content_text .box_container .box.left {
   float: left;
   border-left: 1px dotted #333333;
