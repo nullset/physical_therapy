@@ -18,7 +18,8 @@ class PageAttachmentsController < ApplicationController
       :uploaded_data => params[:uploaded_data],
       # :page_id => @page.id,
       :created_by => @user,
-      :updated_by => @user
+      :updated_by => @user,
+      :title => params[:title]
     )
 
     mime_type = MIME::Types.type_for(@nice_asset.public_filename)
@@ -33,6 +34,14 @@ class PageAttachmentsController < ApplicationController
     #   page.alert 'booo'
     # end
     render :partial => 'admin/pages/nice_asset', :object => @nice_asset
+  end
+  
+  def delete_from_page
+    association = PageAssociation.find(:first, :conditions => ["page_attachment_id = ? and page_id = ?", params[:id], params[:page_id]])
+    if association.destroy
+      render :update do |page|
+      end
+    end
   end
 
 end

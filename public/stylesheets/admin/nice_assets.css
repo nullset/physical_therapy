@@ -1,3 +1,90 @@
+#nice_assets_box {
+  clear: both;
+  background: #f5f1e2;
+  position: relative;
+}
+#nice_assets_box #add_nice_asset { float: right; }
+#nice_assets_box h3 {
+  background: #eae3c5;
+  color: #000000;
+  padding: 5px 10px;
+  font-size: 93%;
+}
+#nice_assets_box #uploader {
+  background: #eae3c5;
+  color: #000000;
+  padding: 5px 10px;
+  font-size: 93%;
+}
+#nice_assets_box .attachments {
+  height: 220px;
+  overflow: auto;
+}
+#nice_assets_box li {
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  width: 160px;
+  height: 160px;
+  background: #ffffff;
+  text-align: center;
+  position: relative;
+  border: 1px solid #cccccc;
+  color: #000000;
+  line-height: 1.2;
+  font-size: 77%;
+}
+#nice_assets_box li li .wrapper { overflow: hidden; }
+#nice_assets_box li img {
+  display: block;
+  margin: 0 auto;
+}
+#nice_assets_box li img.delete {
+  position: absolute;
+  right: -4px;
+  top: -6px;
+  cursor: pointer;
+}
+#uploader {
+  display: none;
+  color: #000000;
+  font-size: 85%;
+}
+#uploader label { margin-right: 0.5em; }
+#uploader input { margin-right: 1em; }
+#uploader object {
+  position: absolute;
+  top: 1.25em;
+}
+#uploader #nice_assets_uploaderQueue { width: 100%; }
+#uploader .uploadifyQueueItem {
+  border-top: 1px solid #cccccc;
+  margin-top: 1em;
+  padding: 1em 1em 0;
+  font-size: 77%;
+  clear: both;
+}
+#uploader .uploadifyQueueItem img {
+  float: left;
+  margin-right: 1em;
+}
+.simplemodal-overlay { background: #000000; }
+.simplemodal-container {
+  background: #ffffff;
+  border: 1px solid #333333;
+  padding: 1em;
+}
+#simplemodal-container a.modalCloseImg {
+  background: url(/images/admin/minus.png) no-repeat;
+  width: 12px;
+  height: 12px;
+  display: inline;
+  z-index: 3200;
+  position: absolute;
+  top: -15px;
+  right: -18px;
+  cursor: pointer;
+}
 #asset_list_wrapper {
   height: 500px;
   overflow: auto;
