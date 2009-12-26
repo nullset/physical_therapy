@@ -52,7 +52,7 @@
   <h3>Attachments <span id="attachments_count"><%= "(#{@page.attachments.length})" unless @page.attachments.blank? %></span></h3>
   <div class="attachments">
     <ul id="nice_assets">
-      <%= render :partial => 'nice_asset', :collection => @page.attachments %>
+      <%= render :partial => 'nice_asset', :collection => @page.page_attachments %>
     </ul>
     <div class="clearfix"></div>
   </div>

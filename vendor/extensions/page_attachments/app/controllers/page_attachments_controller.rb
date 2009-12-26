@@ -16,7 +16,7 @@ class PageAttachmentsController < ApplicationController
     @page = Page.find(params[:page_id])
     @nice_asset = PageAttachment.new(
       :uploaded_data => params[:uploaded_data],
-      :page_id => @page.id,
+      # :page_id => @page.id,
       :created_by => @user,
       :updated_by => @user
     )
@@ -24,6 +24,9 @@ class PageAttachmentsController < ApplicationController
     mime_type = MIME::Types.type_for(@nice_asset.public_filename)
     @nice_asset.content_type = mime_type unless mime_type.blank?
     @nice_asset.save!
+
+    @page_association = PageAssociation.create(:page_attachment_id => @nice_asset.id, :page_id => @page.id)
+    @page_association.save!
     # render :update do |page|
     #   # page.insert_html :bottom, 'nice_assets', :partial => 'admin/pages/nice_asset'
     #   # page.visual_effect :highlight, 'nice_assets_box'
