@@ -19,10 +19,10 @@ module PageAttachmentsInterface
       include_javascript 'extensions/nice_assets/jquery.simplemodal-1.3.3.min.js'
       include_stylesheet 'admin/nice_assets'
 
-      @buttons_partials << "attachments_box"
-      include_javascript 'admin/dragdrop'
-      include_javascript 'admin/page_attachments'
-      include_stylesheet 'admin/page_attachments'
+      # @buttons_partials << "attachments_box"
+      # include_javascript 'admin/dragdrop'
+      # include_javascript 'admin/page_attachments'
+      # include_stylesheet 'admin/page_attachments'
     end
   end
 end

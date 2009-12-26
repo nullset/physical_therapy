@@ -2,7 +2,6 @@
   <h3>Attachments <%= image_tag('admin/plus.png', :id => "add_nice_asset") %></h3>
   <div id="uploader">
     <div><%= label_tag :upload_title, 'Title' %><%= text_field_tag :upload_title %><div id="nice_assets_uploader"></div></div>
-    
   </div> <!-- #uploader -->
   <div class="attachments">
     <ul id="nice_assets">
@@ -36,19 +35,25 @@
   <%- session_key_name = ActionController::Base.session_options[:session_key] -%>
   jQuery(document).ready(function() {
     jQuery("#add_nice_asset").mouseup(function() {
-      jQuery("#uploader").modal();
+      <%- if @page.id -%>
+        jQuery("#uploader").modal();
+      <%- else -%>
+        alert('You must first save this page before you can upload files to it.');
+      <%- end -%>
     });
     
-    jQuery("#nice_assets .delete").mouseup(function() {
-      var id = jQuery($(this).next()).val();
-      jQuery.post("/page_attachments/delete_from_page/" + id, { page_id: <%= @page.id %> },
-        function(data){
-          jQuery('input[type=hidden][value='+id+']').closest('li').remove();
-          // alert(jQuery($(this)).text());
-          // jQuery(this).parentNode.parentNode.parentNode.remove();
-          // alert('fuck me');
+    <%- if @page.id -%>
+      jQuery("#nice_assets .delete").mouseup(function() {
+        var id = jQuery($(this).next()).val();
+        jQuery.post("/page_attachments/delete_from_page/" + id, { page_id: <%= @page.id %> },
+          function(data){
+            jQuery('input[type=hidden][value='+id+']').closest('li').remove();
+            // alert(jQuery($(this)).text());
+            // jQuery(this).parentNode.parentNode.parentNode.remove();
+            // alert('fuck me');
+        });
       });
-    });
+    <%- end -%>
     
     jQuery('#nice_assets_uploader').uploadify({
       'uploader': '/images/extensions/nice_assets/uploadify.swf',
