@@ -1,0 +1,50 @@
+#asset_list_wrapper {
+  height: 500px;
+  overflow: auto;
+  position: relative;
+  border-bottom: 1px solid #cccccc;
+}
+#asset_list_wrapper table#asset_list {
+  position: relative;
+  top: 25px;
+  border: 1px solid #cccccc;
+  border-collapse: collapse;
+  font-size: 85%;
+}
+#asset_list_wrapper table#asset_list th { border: 1px solid #cccccc; }
+#asset_list_wrapper table#asset_list td { border: 1px solid #cccccc; }
+#asset_list_wrapper table#asset_list thead {
+  position: fixed;
+  left: 20px;
+  top: 98px;
+}
+#asset_list_wrapper table#asset_list thead th {
+  padding: 0.2em 0.5em;
+  height: 20px;
+  line-height: 20px;
+  background: #eeeeee;
+  color: #777777;
+}
+#asset_list_wrapper table#asset_list thead th.header { background: #eeeeee url(/images/admin/extensions/nice_assets/bg.gif) right center no-repeat; }
+#asset_list_wrapper table#asset_list thead th.header.headerSortDown { background: #d3d3d3 url(/images/admin/extensions/nice_assets/desc.gif) right center no-repeat; }
+#asset_list_wrapper table#asset_list thead th.header.headerSortUp { background: #d3d3d3 url(/images/admin/extensions/nice_assets/asc.gif) right center no-repeat; }
+#asset_list_wrapper table#asset_list tbody { position: relative; }
+#asset_list_wrapper table#asset_list tbody td {
+  padding: 0.2em 0.5em;
+  min-width: 20px;
+}
+#asset_list_wrapper table#asset_list tbody td .asset { width: 100px; }
+#asset_list_wrapper table#asset_list tbody td li { margin-top: 0.5em; }
+#asset_list_wrapper table#asset_list tbody td li:first-child { margin-top: 0; }
+#asset_list_wrapper table#asset_list tbody td img { margin-right: 0.5em; }
+#asset_list_wrapper table#asset_list tbody td.date { white-space: nowrap; }
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix { display: inline-block; }
+.clearfix { display: block; }
+li.clearfix { display: list-item; }

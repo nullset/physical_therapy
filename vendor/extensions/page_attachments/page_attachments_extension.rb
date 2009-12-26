@@ -10,6 +10,10 @@ class PageAttachmentsExtension < Radiant::Extension
 
    define_routes do |map|
      map.connect 'page_attachments/:action/:id', :controller => 'page_attachments'
+
+     map.namespace :admin do |admin|
+       admin.resources :assets
+     end
    end
 
   def activate
@@ -23,6 +27,8 @@ class PageAttachmentsExtension < Radiant::Extension
     }
     UserActionObserver.send :include, ObservePageAttachments
     Admin::PagesController.send :include, PageAttachmentsInterface
+    
+    admin.nav["content"] << admin.nav_item(:assets, "Assets", "/admin/assets")
     
     PagePart.class_eval do
     # Page.class_eval do

@@ -1,0 +1,15 @@
+#wrapper #wrapper_inner #page #header { display: none; }
+#wrapper #wrapper_inner #page #top_nav { display: none; }
+#wrapper #wrapper_inner #page #sidebar { display: none; }
+#wrapper #wrapper_inner #page .content_context { display: none; }
+#wrapper #wrapper_inner #page #footer .nav { display: none; }
+#wrapper #wrapper_inner #page #footer .subnav { display: none; }
+#wrapper #wrapper_inner #page #content {
+  width: auto;
+  margin: 0;
+}
+#wrapper #wrapper_inner #page #content .content_text {
+  width: auto;
+  margin: 0;
+}
+#wrapper #wrapper_inner #page #footer .subnav li:first-child { display: block; }

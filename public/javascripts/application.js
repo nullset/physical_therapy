@@ -43,7 +43,7 @@ $(document).ready(function() {
       if (current_doctor.nextAll().length != 0) {
         next_doctor = current_doctor.next();
       } else {
-        next_doctor = current_doctor.prevAll().eq(0);
+        next_doctor = current_doctor.parent().children(":first");
       }
       next_doctor.fadeIn('slow');
       return false;
