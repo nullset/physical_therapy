@@ -41,12 +41,14 @@
     
     <%- if @page.id -%>
       jQuery("#nice_assets .delete").mouseup(function() {
-        var id = jQuery($(this).next()).val();
-        jQuery.post("/page_attachments/delete_from_page/" + id, { page_id: <%= @page.id %> },
-          function(data){
-            jQuery('input[type=hidden][value='+id+']').closest('li').remove();
-          }
-        );
+        if (confirm('Are you sure you want to remove this asset from the page?\n\nClicking "ok" may leave broken links on this page if this file is referenced in any part of the page.')) {
+          var id = jQuery($(this).next()).val();
+          jQuery.post("/page_attachments/delete_from_page/" + id, { page_id: <%= @page.id %> },
+            function(data){
+              jQuery('input[type=hidden][value='+id+']').closest('li').remove();
+            }
+          );
+        }
       });
     <%- end -%>
     
