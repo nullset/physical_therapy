@@ -1,8 +1,6 @@
 <div id="nice_assets_box">
   <h3>Attachments <%= image_tag('admin/plus.png', :id => "add_nice_asset") %></h3>
-  <div id="uploader">
-    <div><%= label_tag :upload_title, 'Title' %><%= text_field_tag :upload_title %><div id="nice_assets_uploader"></div></div>
-  </div> <!-- #uploader -->
+  <%= render :partial => 'admin/assets/uploader' %>
   <div class="attachments">
     <ul id="nice_assets">
       <%= render :partial => 'nice_asset', :collection => @page.page_attachments %>
@@ -32,7 +30,6 @@
         //    }
         // );
 
-  <%- session_key_name = ActionController::Base.session_options[:session_key] -%>
   jQuery(document).ready(function() {
     jQuery("#add_nice_asset").mouseup(function() {
       <%- if @page.id -%>
@@ -49,41 +46,11 @@
           function(data){
             jQuery('input[type=hidden][value='+id+']').closest('li').remove();
             // alert(jQuery($(this)).text());
-            // jQuery(this).parentNode.parentNode.parentNode.remove();
+            jQuery(this).parentNode.parentNode.parentNode.remove();
             // alert('fuck me');
         });
       });
     <%- end -%>
-    
-    jQuery('#nice_assets_uploader').uploadify({
-      'uploader': '/images/extensions/nice_assets/uploadify.swf',
-      'script': '/page_attachments/create',
-      'folder': '/path/to/uploads-folder',
-      'cancelImg': '/images/extensions/nice_assets/cancel.png',
-      'auto': true,
-      'fileDataName': 'uploaded_data',
-      'buttonImg': '/images/extensions/nice_assets/choose_file.png',
-      'scriptData': {
-        // '_method': 'put',
-        '<%= session_key_name %>' : '<%= u cookies[session_key_name] %>',
-        'authenticity_token'  : '<%= u form_authenticity_token if protect_against_forgery? %>',
-        'page_id' : '<%= @page.id %>',
-        'user_id' : '<%= current_user.id %>',
-        'title' : ''
-      },
-      'onComplete': function(event, queueID, fileObj, response, data) {
-        // alert(event + " :: " + queueID + " :: " + fileObj + " :: " + response + " :: " + data);
-        jQuery('#nice_assets').append(response);
-        var attachments_count = jQuery('#nice_assets li').length;
-        jQuery("#attachments_count").text('(' + attachments_count + ')');
-           // $('#filesUploaded').append('<a href='+fileObj.filePath+'>'+response+'</a><br>');
-        jQuery('#upload_title').val('');
-      }
-    });
-    
-    jQuery('#upload_title').keyup(function() {
-      jQuery('#nice_assets_uploader').uploadifySettings('scriptData', {'title' : jQuery('#upload_title').val() });
-    });
     
   });
 </script>

@@ -1,0 +1,28 @@
+<%- asset = @nice_asset if @nice_asset -%>
+<tr>
+  <td>
+    <div class="asset">
+      <%- if asset.image? -%>
+        <%= link_to(image_tag(asset.public_filename(:icon)), asset.public_filename, :target => "_blank") %>
+      <%- else -%>  
+      
+      <%- end -%>
+    </div>
+  </td>
+  <td><%= asset.filename %></td>
+  <td class="date"><%= asset.created_at.to_date %></td>
+  <td><%= asset.title %></td>
+  <td><%= asset.page_associations.length %></td>
+  <td>
+    <%- unless asset.page_associations.blank? -%>
+      <ul>
+      <%- asset.page_associations.each do |pa| -%>
+        <li><%= link_to(pa.page.url, "/admin/pages/#{pa.page.id}/edit") %></li>
+      <%- end -%>
+      </ul>
+    <%- end -%>
+  </td>
+  <td>
+    <span class="delete">Delete <%= hidden_field_tag :id, asset.id, :id => nil %></span>
+  </td>
+</tr>

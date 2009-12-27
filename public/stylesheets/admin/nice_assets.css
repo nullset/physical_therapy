@@ -112,9 +112,9 @@
   background: #eeeeee;
   color: #777777;
 }
-#asset_list_wrapper table#asset_list thead th.header { background: #eeeeee url(/images/admin/extensions/nice_assets/bg.gif) right center no-repeat; }
-#asset_list_wrapper table#asset_list thead th.header.headerSortDown { background: #d3d3d3 url(/images/admin/extensions/nice_assets/desc.gif) right center no-repeat; }
-#asset_list_wrapper table#asset_list thead th.header.headerSortUp { background: #d3d3d3 url(/images/admin/extensions/nice_assets/asc.gif) right center no-repeat; }
+#asset_list_wrapper table#asset_list thead th.header { background: #eeeeee url(/images/extensions/nice_assets/bg.gif) right center no-repeat; }
+#asset_list_wrapper table#asset_list thead th.header.headerSortDown { background: #d3d3d3 url(/images/extensions/nice_assets/desc.gif) right center no-repeat; }
+#asset_list_wrapper table#asset_list thead th.header.headerSortUp { background: #d3d3d3 url(/images/extensions/nice_assets/asc.gif) right center no-repeat; }
 #asset_list_wrapper table#asset_list tbody { position: relative; }
 #asset_list_wrapper table#asset_list tbody td {
   padding: 0.2em 0.5em;
@@ -125,6 +125,14 @@
 #asset_list_wrapper table#asset_list tbody td li:first-child { margin-top: 0; }
 #asset_list_wrapper table#asset_list tbody td img { margin-right: 0.5em; }
 #asset_list_wrapper table#asset_list tbody td.date { white-space: nowrap; }
+#asset_list_wrapper table#asset_list tbody span.delete {
+  white-space: nowrap;
+  text-decoration: underline;
+  color: #0066cc;
+  cursor: pointer;
+  background: url(/images/admin/minus.png) left center no-repeat;
+  padding-left: 16px;
+}
 .clearfix:after {
   content: ".";
   display: block;

@@ -2,57 +2,17 @@
 <%- include_javascript 'admin/jquery-1.3.2.min' -%>
 <%- include_javascript 'admin/jquery_no_conflict' -%>
 <%- include_javascript 'admin/jquery.tablesorter.min.js' -%>
-
-<div id="asset_list_wrapper">
-  <table id="asset_list">
-    <thead>
-      <tr>
-        <th scope="col">Asset</th>
-        <th scope="col">Filename</th>
-        <th scope="col">Date</th>
-        <th scope="col">Title</th>
-        <th scope="col">#</th>
-        <th scope="col">Pages</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%- @assets.each do |asset| -%>
-        <tr>
-          <td>
-            <div class="asset">
-              <%- if asset.image? -%>
-                <%= link_to(image_tag(asset.public_filename(:icon)), asset.public_filename, :target => "_blank") %>
-              <%- else -%>  
-              
-              <%- end -%>
-            </div>
-          </td>
-          <td><%= asset.filename %></td>
-          </td>
-          <td class="date"><%= asset.created_at.to_date %></td>
-          <td><%= asset.title %></td>
-          <td><%= asset.page_associations.length %></td>
-          <td>
-            <%- unless asset.page_associations.blank? -%>
-              <ul>
-              <%- asset.page_associations.each do |pa| -%>
-                <li><%= link_to(pa.page.url, "/admin/pages/#{pa.page.id}/edit") %></li>
-              <%- end -%>
-              </ul>
-            <%- end -%>
-          </td>
-          <td>
-            DELETE
-          </td>
-        </tr>
-      <%- end -%>
-    </tbody>
-  </table>
-</div> <!-- #asset_list_wrapper -->
+<%- include_javascript 'admin/swfobject' -%>
+<%- include_javascript 'admin/jquery.uploadify.v2.1.0.min' -%>
+<%- include_javascript 'extensions/nice_assets/jquery.simplemodal-1.3.3.min.js' -%>
+<%- include_stylesheet 'admin/nice_assets' -%>
 
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function() {
+  jQuery("#add_nice_asset").mouseup(function() {
+    jQuery("#uploader").modal();
+  });  
+  
   var first_body_row = jQuery('#asset_list tbody tr:first td');
   var header_row = jQuery('#asset_list thead tr:first th');
   // alert(first_body_row.eq(0).width());
@@ -78,5 +38,46 @@ jQuery(document).ready(function() {
       6: {sorter: false}
     }
   });
+  
+  jQuery("span.delete").mouseup(function() {
+    if (confirm('Are you sure you want to delete this asset?\n\nClicking "ok" will entirely remove this file from your website, and may leave broken links on pages that reference this file.')) {
+      id = jQuery(this).find('input:first').val();
+      row = jQuery(this).closest('tr');
+      row.css({'background' : '#ddd', 'color' : '#6f0000'});
+      // jQuery(this).closest('tr').remove();
+      jQuery.post("/page_attachments/delete/" + id, {},
+        function(data){
+          row.fadeOut('slow');
+      });
+    }
+  });  
+  
 });
 </script>
+
+<div id="asset_list_wrapper">
+  <table id="asset_list">
+    <thead>
+      <tr>
+        <th scope="col">Asset</th>
+        <th scope="col">Filename</th>
+        <th scope="col">Date</th>
+        <th scope="col">Title</th>
+        <th scope="col">#</th>
+        <th scope="col">Pages</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%- @assets.each do |asset| -%>
+        <%= render :partial => 'admin/pages/nice_asset_row', :locals => {:asset => asset} %>
+      <%- end -%>
+    </tbody>
+  </table>
+</div> <!-- #asset_list_wrapper -->
+
+<p><button id="add_nice_asset">+ Upload new asset</button></p>
+<%= render :partial => 'admin/assets/uploader' %>
+
+
+<div id="delete_progress" style="display: none;"><%= image_tag('extensions/nice_assets/delete_progress.gif') %></div>

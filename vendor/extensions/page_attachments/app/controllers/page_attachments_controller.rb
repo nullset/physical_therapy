@@ -13,7 +13,6 @@ class PageAttachmentsController < ApplicationController
   
   def create
     @user = User.find(params[:user_id])
-    @page = Page.find(params[:page_id])
     @nice_asset = PageAttachment.new(
       :uploaded_data => params[:uploaded_data],
       # :page_id => @page.id,
@@ -26,14 +25,27 @@ class PageAttachmentsController < ApplicationController
     @nice_asset.content_type = mime_type unless mime_type.blank?
     @nice_asset.save!
 
-    @page_association = PageAssociation.create(:page_attachment_id => @nice_asset.id, :page_id => @page.id)
-    @page_association.save!
+    if params[:page_id]
+      @page = Page.find(params[:page_id])
+      @page_association = PageAssociation.create(:page_attachment_id => @nice_asset.id, :page_id => @page.id)
+      @page_association.save!
+      render :partial => 'admin/pages/nice_asset', :object => @nice_asset
+    else
+      render :partial => 'admin/pages/nice_asset_row', :object => @nice_asset
+    end
     # render :update do |page|
     #   # page.insert_html :bottom, 'nice_assets', :partial => 'admin/pages/nice_asset'
     #   # page.visual_effect :highlight, 'nice_assets_box'
     #   page.alert 'booo'
     # end
-    render :partial => 'admin/pages/nice_asset', :object => @nice_asset
+  end
+  
+  def delete
+    asset = PageAttachment.find(params[:id])
+    if asset.destroy
+      render :update do |page|
+      end
+    end
   end
   
   def delete_from_page
@@ -43,5 +55,5 @@ class PageAttachmentsController < ApplicationController
       end
     end
   end
-
+  
 end
