@@ -45,10 +45,8 @@
         jQuery.post("/page_attachments/delete_from_page/" + id, { page_id: <%= @page.id %> },
           function(data){
             jQuery('input[type=hidden][value='+id+']').closest('li').remove();
-            // alert(jQuery($(this)).text());
-            // jQuery(this).parentNode.parentNode.parentNode.remove();
-            // alert('fuck me');
-        });
+          }
+        );
       });
     <%- end -%>
     
