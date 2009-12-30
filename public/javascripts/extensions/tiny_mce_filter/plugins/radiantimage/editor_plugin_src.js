@@ -34,7 +34,7 @@ var TinyMCE_RadiantImagePlugin = {
 				var template = new Array();
 
 				template['file']   = '../../plugins/radiantimage/image.htm';
-				template['width']  = 480;
+				template['width']  = 750;
 				template['height'] = 380;
 
 				// Language specific width and height addons

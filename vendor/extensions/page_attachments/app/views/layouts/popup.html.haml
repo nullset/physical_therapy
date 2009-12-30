@@ -1,0 +1,31 @@
+!!!
+%html{:lang=>"en-US"}
+  %head
+    %meta{:charset=>"utf-8"}/
+    %title= @page_title || default_page_title
+    - @stylesheets.uniq.each do |stylesheet|
+      = stylesheet_link_tag stylesheet
+    = javascript_include_tag %w(admin/jquery-1.3.2.min.js), :cache => 'admin/all'
+    /[if lt IE 7]
+      = javascript_include_tag 'admin/pngfix'
+    - @javascripts.uniq.each do |javascript|
+      = javascript_include_tag javascript
+    - if @content_for_page_scripts
+      = javascript_tag @content_for_page_scripts
+    - if @content_for_page_css
+      %style{:type => "text/css"}= @content_for_page_css
+    = yield :meta
+  %body{:class=>body_classes.join(" ")}
+    #page
+      #main
+        - if flash[:notice]
+          #notice
+            %p= flash[:notice]
+        - if flash[:error]
+          #error
+            %p= flash[:error]
+        #content
+          = find_and_preserve(yield)
+      - if @content_for_popups
+        #popups
+          = yield :popups

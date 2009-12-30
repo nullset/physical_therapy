@@ -1,0 +1,47 @@
+<script language="javascript" type="text/javascript" src="/javascripts/admin/jquery.tablesorter.min.js"></script>
+<link rel="stylesheet" href="/stylesheets/admin/nice_assets.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('tr').click(function() {
+      url = $(this).find("input:first").val().replace(/\?\d+$/, '');
+      src = parent.document.getElementById('src');
+      src.value = url;
+      mcTabs.displayTab('general_tab','general_panel');
+    });
+  });
+  
+  jQuery("#asset_list").tablesorter({
+    sortList: [[2,1]],
+    headers: {
+      0: {sorter: false}
+    }
+  });
+</script>
+
+
+<div id="popup">
+  <div id="asset_list_wrapper">
+    <table id="asset_list">
+        <%- if @type == 'image' -%>
+          <thead>
+            <tr>
+              <th scope="col">Asset</th>
+              <th scope="col">Filename</th>
+              <th scope="col">Date</th>
+              <th scope="col">Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- @files.each do |asset| -%>
+              <%= render :partial => 'admin/assets/popup_asset', :locals => {:asset => asset} %>
+            <%- end -%>
+          </tbody>
+        <%- else -%>
+        
+        
+        <%- end -%>
+      </table>
+    </div> <!-- #asset_list_wrapper -->
+
+  </div>

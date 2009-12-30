@@ -12,7 +12,8 @@ class PageAttachmentsExtension < Radiant::Extension
      map.connect 'page_attachments/:action/:id', :controller => 'page_attachments'
 
      map.namespace :admin do |admin|
-       admin.resources :assets
+       admin.resources :assets,
+        :collection => {:popup => :get}
      end
    end
 
