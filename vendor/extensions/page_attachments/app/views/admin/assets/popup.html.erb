@@ -3,7 +3,7 @@
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function() {
-    $('#asset_list td[class!=delete]').click(function() {
+    $('#asset_list tbody td[class!=actions]').click(function() {
       url = $(this).parent().find("input:first").val().replace(/\?\d+$/, '');
       src = parent.document.getElementById('src');
       src.value = url;

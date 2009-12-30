@@ -14,5 +14,8 @@
   <td><%= asset.filename %></td>
   <td class="date"><%= asset.created_at.to_date %></td>
   <td><%= asset.title %></td>
-  <td class="delete"><span class="delete">Delete <%= hidden_field_tag :id, asset.id, :id => nil %></span></td>
+  <td class="actions">
+    <div class="show">Show <%= hidden_field_tag :id, asset.id, :id => nil %></div>
+    <div class="delete">Delete <%= hidden_field_tag :id, asset.id, :id => nil %></div>
+  </td>
 </tr>
