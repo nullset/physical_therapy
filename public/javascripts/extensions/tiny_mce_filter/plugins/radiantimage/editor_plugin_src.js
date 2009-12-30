@@ -35,7 +35,7 @@ var TinyMCE_RadiantImagePlugin = {
 
 				template['file']   = '../../plugins/radiantimage/image.htm';
 				template['width']  = 750;
-				template['height'] = 380;
+				template['height'] = 580;
 
 				// Language specific width and height addons
 				template['width']  += tinyMCE.getLang('lang_advimage_delta_width', 0);

@@ -52,10 +52,7 @@
 }
 #uploader label { margin-right: 0.5em; }
 #uploader input { margin-right: 1em; }
-#uploader object {
-  position: absolute;
-  top: 1.25em;
-}
+#uploader object { position: absolute; }
 #uploader #nice_assets_uploaderQueue { width: 100%; }
 #uploader .uploadifyQueueItem {
   border-top: 1px solid #cccccc;
@@ -68,6 +65,12 @@
   float: left;
   margin-right: 1em;
 }
+#upload_panel #uploader {
+  display: block;
+  position: relative;
+  margin-top: 2em;
+}
+#upload_panel #uploader .uploadifyQueueItem { font-size: 100%; }
 .simplemodal-overlay { background: #000000; }
 .simplemodal-container {
   background: #ffffff;
@@ -86,7 +89,7 @@
   cursor: pointer;
 }
 #asset_list_wrapper {
-  height: 300px;
+  height: 500px;
   overflow: auto;
   position: relative;
   border-bottom: 1px solid #cccccc;

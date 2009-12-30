@@ -3,18 +3,19 @@
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function() {
-    $('tr').click(function() {
-      url = $(this).find("input:first").val().replace(/\?\d+$/, '');
+    $('#asset_list td[class!=delete]').click(function() {
+      url = $(this).parent().find("input:first").val().replace(/\?\d+$/, '');
       src = parent.document.getElementById('src');
       src.value = url;
       mcTabs.displayTab('general_tab','general_panel');
     });
   });
   
-  jQuery("#asset_list").tablesorter({
+  $("#asset_list").tablesorter({
     sortList: [[2,1]],
     headers: {
-      0: {sorter: false}
+      0: {sorter: false},
+      4: {sorter: false}
     }
   });
 </script>
@@ -30,6 +31,7 @@
               <th scope="col">Filename</th>
               <th scope="col">Date</th>
               <th scope="col">Title</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>

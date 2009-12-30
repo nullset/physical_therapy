@@ -13,7 +13,10 @@ class PageAttachmentsExtension < Radiant::Extension
 
      map.namespace :admin do |admin|
        admin.resources :assets,
-        :collection => {:popup => :get}
+        :collection => {
+          :popup => :get,
+          :uploader => :any
+        }
      end
    end
 

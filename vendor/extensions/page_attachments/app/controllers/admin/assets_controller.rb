@@ -15,5 +15,9 @@ class Admin::AssetsController < ApplicationController
     end
     render :action => "popup", :layout => false
   end
+  
+  def uploader
+    render :action => "uploader", :layout => false
+  end
 
 end

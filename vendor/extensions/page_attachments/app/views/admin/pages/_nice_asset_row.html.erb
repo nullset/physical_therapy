@@ -13,16 +13,6 @@
   <td><%= asset.filename %></td>
   <td class="date"><%= asset.created_at.to_date %></td>
   <td><%= asset.title %></td>
-  <td><%= asset.page_associations.length %></td>
-  <td>
-    <%- unless asset.page_associations.blank? -%>
-      <ul>
-      <%- asset.page_associations.each do |pa| -%>
-        <li><%= link_to(pa.page.url, "/admin/pages/#{pa.page.id}/edit") %></li>
-      <%- end -%>
-      </ul>
-    <%- end -%>
-  </td>
   <td>
     <span class="delete">Delete <%= hidden_field_tag :id, asset.id, :id => nil %></span>
   </td>
