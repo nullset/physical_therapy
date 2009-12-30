@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
+	<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_assets_box.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -65,6 +65,20 @@
 				<integer>85</integer>
 			</dict>
 		</dict>
+		<key>public/stylesheets/admin/nice_assets.less</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>37</integer>
+				<key>line</key>
+				<integer>124</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>109</integer>
+		</dict>
 		<key>public/stylesheets/panorama.less</key>
 		<dict>
 			<key>caret</key>
@@ -93,107 +107,21 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>vendor/extensions/conditional_tags/README</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>38</integer>
-				<key>line</key>
-				<integer>22</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/conditional_tags/lib/conditional_tags/page_tags_ext.rb</key>
+		<key>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>21</integer>
-		</dict>
-		<key>vendor/extensions/page_attachments/page_attachments_extension.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>53</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>29</integer>
-		</dict>
-		<key>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>19</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/extensions/utility_tags/app/models/utility_tags.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>77</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>51</integer>
-		</dict>
-		<key>vendor/extensions/variables/README</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>81</integer>
-				<key>line</key>
-				<integer>15</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>1</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
 				<integer>47</integer>
-				<key>line</key>
-				<integer>15</integer>
 			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>81</integer>
-				<key>line</key>
-				<integer>15</integer>
-			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>2</integer>
 		</dict>
-		<key>vendor/radiant/app/models/file_not_found_page.rb</key>
+		<key>vendor/extensions/page_attachments/app/models/page_attachments_interface.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -202,54 +130,126 @@
 				<key>line</key>
 				<integer>20</integer>
 			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/radiant/app/models/page.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>234</integer>
-		</dict>
-		<key>vendor/radiant/app/models/standard_tags.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>352</integer>
-			</dict>
 			<key>columnSelection</key>
 			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>327</integer>
+			<integer>0</integer>
 			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>350</integer>
+				<integer>15</integer>
 			</dict>
 			<key>selectTo</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>352</integer>
+				<integer>20</integer>
 			</dict>
+		</dict>
+		<key>vendor/extensions/page_attachments/app/views/admin/assets/_uploader.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>45</integer>
+				<key>line</key>
+				<integer>36</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/extensions/page_attachments/app/views/admin/assets/index.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>188</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>132</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>188</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+		</dict>
+		<key>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset.html.haml</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>8</integer>
+				<key>line</key>
+				<integer>8</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset_row.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>12</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/extensions/page_attachments/app/views/admin/pages/_nice_assets_box.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>50</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>22</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
 		</dict>
 		<key>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</key>
 		<dict>
@@ -269,17 +269,17 @@
 	<key>openDocuments</key>
 	<array>
 		<string>vendor/extensions/page_attachments/public/javascripts/admin/page_attachments.js</string>
-		<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
-		<string>vendor/extensions/conditional_tags/lib/conditional_tags/page_tags_ext.rb</string>
-		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
-		<string>vendor/extensions/variables/README</string>
-		<string>vendor/extensions/conditional_tags/README</string>
-		<string>vendor/radiant/app/models/file_not_found_page.rb</string>
+		<string>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset_row.html.erb</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/assets/index.html.erb</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_assets_box.html.erb</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/assets/_uploader.html.erb</string>
+		<string>vendor/extensions/page_attachments/app/models/page_attachments_interface.rb</string>
+		<string>vendor/extensions/page_attachments/app/views/admin/pages/_nice_asset.html.haml</string>
+		<string>public/stylesheets/admin/nice_assets.less</string>
 		<string>config/environment.rb</string>
-		<string>vendor/radiant/app/models/page.rb</string>
 		<string>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</string>
 		<string>config/database.yml</string>
-		<string>vendor/radiant/app/models/standard_tags.rb</string>
 		<string>public/stylesheets/panorama.less</string>
 		<string>public/stylesheets/tinymce.css</string>
 	</array>
