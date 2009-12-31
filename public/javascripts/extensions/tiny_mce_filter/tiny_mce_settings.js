@@ -233,7 +233,6 @@ function text_input_method(index, filter) {
   }
 }
 
-
 document.observe("dom:loaded", function() {
   $$('div.part').each(function(d) {
     part = d.parentNode.getAttribute('data-caption');

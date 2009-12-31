@@ -43,9 +43,21 @@ class PageAttachmentsExtension < Radiant::Extension
     
     PagePart.class_eval do
     # Page.class_eval do
+      before_save :cleanup
       before_save :generate_images  # automatically tacks the correct size onto the end of the image path and generates the image
       
       private
+      
+      def cleanup
+        # Remove leading/trailing whitespace
+        self.content = self.content.strip
+        
+        # Remove XML pasted from word docs
+        self.content = self.content.gsub(/<!--\[if(.|\W)*?<!\[endif\]-->/, '')
+        
+        # Remove trailing empty paragraphs
+        self.content = self.content.gsub(/<p>\W*&nbsp;\W*<\/p>$/, '')
+      end
       
       def generate_images
         case self.filter_id
