@@ -111,6 +111,24 @@ module UtilityTags
   end
 
   desc %{
+    Proceeds only if the page part exists
+  
+    *Usage:*
+    
+    <pre><code><r:if_parts match="regexp">
+     ...
+    </r:if_parts>
+    </code></pre>
+  }
+  tag 'if_parts' do |tag|
+    raise TagError.new("`if_parts' tag must contain a `match' attribute.") unless tag.attr.has_key?('match')
+    match = tag.attr['match']
+    
+    parts = tag.locals.page.parts.find_all {|part| part.name =~ /#{match}/ }
+    tag.expand if parts.length > 0
+  end
+
+  desc %{
     Grabs only a portion of a page part.
   
     *Usage:*
@@ -118,9 +136,8 @@ module UtilityTags
     <pre><code><r:excerpt [name="body"] [num="15"] [truncate_string="..."] /></code></pre>
   }
   tag 'excerpt' do |tag|
-    # html_elements = tag.attr.has_key?('html_elements') ? tag.attr['html_elements'] : ['p']
     name = tag.attr.has_key?('name') ? tag.attr['name'] : 'body'
-    num = tag.attr.has_key?('num_words') ? tag.attr['num'] : 100
+    num = tag.attr.has_key?('num') ? tag.attr['num'] : 100
     truncate_string = tag.attr.has_key?('truncate_string') ? tag.attr['truncate_string'] : '...'
 
     page = tag.locals.page
@@ -130,7 +147,6 @@ module UtilityTags
       excerpted_text = doc.css('p')
       excerpted_text.search('img').remove
       unless excerpted_text.blank?
-        # truncated = html_truncate(excerpted_text.to_s.gsub(/<p>\s*&nbsp;\s*<\/p>/, ''), num_words.to_i, truncate_string).gsub(/<\/?.*?>/, '').gsub(/&amp;/, '&')
         truncated = excerpted_text.to_s.gsub(/<p>\s*&nbsp;\s*<\/p>/, '').gsub(/<\/?.*?>/, '').gsub(/&amp;/, '&')[0..num.to_i]
         content = unescape_radius_tags("<p>#{truncated}#{truncate_string}</p>")
       end
