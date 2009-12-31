@@ -19,5 +19,11 @@ class Admin::AssetsController < ApplicationController
   def uploader
     render :action => "uploader", :layout => false
   end
+  
+  def page_tree
+    # @pages = Page.find(:all, :order => "parent_id")
+    @homepage = Page.find_by_parent_id(nil)
+    render :action => "page_tree", :layout => false
+  end
 
 end

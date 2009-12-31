@@ -4,9 +4,16 @@
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function() {
     $('#asset_list tbody td[class!=actions]').click(function() {
-      url = $(this).parent().find("input:first").val().replace(/\?\d+$/, '');
       src = parent.document.getElementById('src');
+      if (src) {
+        url = $(this).parent().find("input[name=url]").val().replace(/\?\d+$/, '');
+      } else {
+        src = parent.document.getElementById('href');
+        url = $(this).parent().find("input[name=url_full]").val().replace(/\?\d+$/, '');
+      }
       src.value = url;
+      title = parent.document.getElementById('title');
+      title.value = $(this).parent().find("td.title").text();
       mcTabs.displayTab('general_tab','general_panel');
     });
   });
@@ -24,25 +31,20 @@
 <div id="popup">
   <div id="asset_list_wrapper">
     <table id="asset_list">
-        <%- if @type == 'image' -%>
-          <thead>
-            <tr>
-              <th scope="col">Asset</th>
-              <th scope="col">Filename</th>
-              <th scope="col">Date</th>
-              <th scope="col">Title</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%- @files.each do |asset| -%>
-              <%= render :partial => 'admin/assets/popup_asset', :locals => {:asset => asset} %>
-            <%- end -%>
-          </tbody>
-        <%- else -%>
-        
-        
-        <%- end -%>
+        <thead>
+          <tr>
+            <th scope="col">Asset</th>
+            <th scope="col">Filename</th>
+            <th scope="col">Date</th>
+            <th scope="col">Title</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- @files.each do |asset| -%>
+            <%= render :partial => 'admin/assets/popup_asset', :locals => {:asset => asset} %>
+          <%- end -%>
+        </tbody>
       </table>
     </div> <!-- #asset_list_wrapper -->
 

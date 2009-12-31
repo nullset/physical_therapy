@@ -10,12 +10,14 @@ class PageAttachmentsExtension < Radiant::Extension
 
    define_routes do |map|
      map.connect 'page_attachments/:action/:id', :controller => 'page_attachments'
+     map.connect 'admin/pages/tree', :controller => "admin/pages", :action => 'tree'
 
      map.namespace :admin do |admin|
        admin.resources :assets,
         :collection => {
           :popup => :get,
-          :uploader => :any
+          :uploader => :any,
+          :page_tree => :get
         }
      end
    end

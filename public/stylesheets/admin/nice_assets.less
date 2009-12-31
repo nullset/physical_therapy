@@ -139,6 +139,9 @@
     }
     tbody {
       position: relative;
+      tr:hover td {
+        background: #D8E8CC;
+      }
       td {
         padding: .2em .5em;
         min-width: 20px;
@@ -161,6 +164,11 @@
       td.date {
         white-space: nowrap;
       }
+      td.title {
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+      }
       td.actions div {
         white-space: nowrap;
         text-decoration: underline;
@@ -180,6 +188,27 @@
         border: none;
       }
     }
+  }
+}
+
+#pages {
+  height: 500px;
+  overflow: auto;
+  ul {
+    margin: .5em 0 .5em 0;
+    li {
+      margin: .5em 0;
+    }
+  }
+}
+#pages .tree {
+  margin: 0;
+  padding: 0;
+  
+  > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }
 

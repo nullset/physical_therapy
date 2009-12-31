@@ -1,0 +1,40 @@
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $("#pages a").click(function() {
+      url = $(this).attr('href');
+      href = parent.document.getElementById('href');
+      href.value = url;
+      title = parent.document.getElementById('title');
+      title.value = $(this).text();
+      mcTabs.displayTab('general_tab','general_panel');
+      return false;
+    });
+    
+  });
+</script>
+
+
+<%- 
+    def tree(page)
+      @s ||= ""
+      unless page.children.blank?
+        @s << "<ul>"
+        page.children.each do |child|
+          @s << "<li>#{link_to(child.title, child.url)}"
+          tree(child)
+          @s << "</li>"
+        end
+        @s << "</ul>"
+      end
+    end
+ -%>
+
+<%- if @homepage -%>
+  <ul class="tree">
+    <li>
+      <%= link_to(@homepage.title, @homepage.url) %>
+      <%= tree(@homepage) %>
+    </li>
+  </ul>
+  <%= @list %>
+<%- end -%>
