@@ -49,14 +49,21 @@ class PageAttachmentsExtension < Radiant::Extension
       private
       
       def cleanup
-        # Remove leading/trailing whitespace
-        self.content = self.content.strip
+        unless self.content.blank?
+          # Remove leading/trailing whitespace
+          self.content = self.content.strip
         
-        # Remove XML pasted from word docs
-        self.content = self.content.gsub(/<!--\[if(.|\W)*?<!\[endif\]-->/, '')
+          # Remove XML pasted from word docs
+          self.content = self.content.gsub(/<!--\[if(.|\W)*?<!(--)?\[endif\]-->/, '')
+          self.content = self.content.gsub(/\sclass="Mso[^"]*"/, '')
         
-        # Remove trailing empty paragraphs
-        self.content = self.content.gsub(/<p>\W*&nbsp;\W*<\/p>$/, '')
+          # Remove trailing empty paragraphs
+          self.content = self.content.gsub(/<p>\W*&nbsp;\W*<\/p>$/, '')
+          
+          # Remove font tags
+          self.content = self.content.gsub(/<\/?font[^>]*>/, '')
+          self.content = self.content.gsub(/\s?font-family:[^";]*;?/, '')
+        end
       end
       
       def generate_images
