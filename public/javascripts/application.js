@@ -54,4 +54,8 @@ $(document).ready(function() {
       doctor_rotator();
   }, 5000);
   
+  
+  $('.print').click(function() {
+    window.print();
+  });
 });
