@@ -14,14 +14,14 @@ jQuery(document).ready(function() {
     jQuery("#uploader").modal();
   });  
   
-  var first_body_row = jQuery('#asset_list tbody tr:first td');
-  var header_row = jQuery('#asset_list thead tr:first th');
-  // alert(first_body_row.eq(0).width());
-  
-  var length = first_body_row.length;
-  for (i=0; i < length; i++) {
-    header_row.eq(i).css('width', first_body_row.eq(i).css('width'));
-  }
+  // var first_body_row = jQuery('#asset_list tbody tr:first td');
+  // var header_row = jQuery('#asset_list thead tr:first th');
+  // // alert(first_body_row.eq(0).width());
+  // 
+  // var length = first_body_row.length;
+  // for (i=0; i < length; i++) {
+  //   header_row.eq(i).css('width', first_body_row.eq(i).css('width'));
+  // }
   // var i = 0;
   // first_body_row.each(function() {
   //   alert($(this).css('width'));
@@ -35,8 +35,7 @@ jQuery(document).ready(function() {
     sortList: [[2,1]],
     headers: {
       0: {sorter: false},
-      5: {sorter: false},
-      6: {sorter: false}
+      4: {sorter: false}
     }
   });
   
@@ -64,8 +63,6 @@ jQuery(document).ready(function() {
         <th scope="col">Filename</th>
         <th scope="col">Date</th>
         <th scope="col">Title</th>
-        <th scope="col">#</th>
-        <th scope="col">Pages</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>

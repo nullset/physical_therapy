@@ -146,17 +146,17 @@
   padding-left: 20px;
 }
 #asset_list_wrapper table#asset_list tbody a img { border: none; }
-#pages {
+#popup_pages {
   height: 500px;
   overflow: auto;
 }
-#pages ul { margin: 0.5em 0 0.5em 0; }
-#pages ul li { margin: 0.5em 0; }
-#pages .tree {
+#popup_pages ul { margin: 0.5em 0 0.5em 0; }
+#popup_pages ul li { margin: 0.5em 0; }
+#popup_pages .tree {
   margin: 0;
   padding: 0;
 }
-#pages .tree > li {
+#popup_pages .tree > li {
   list-style: none;
   margin: 0;
   padding: 0;

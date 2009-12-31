@@ -34,7 +34,7 @@ class PageAttachmentsExtension < Radiant::Extension
     UserActionObserver.send :include, ObservePageAttachments
     Admin::PagesController.send :include, PageAttachmentsInterface
     
-    admin.nav["content"] << admin.nav_item(:assets, "Assets", "/admin/assets")
+    # admin.nav["content"] << admin.nav_item(:assets, "Assets", "/admin/assets")
     
     User.class_eval {
       has_many :buckets

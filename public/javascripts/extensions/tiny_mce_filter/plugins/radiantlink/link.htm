@@ -70,14 +70,14 @@
 			</div>
 
 		  <div id="pages_panel" class="panel">
-			  <div id="pages"></div>
+			  <div id="popup_pages"></div>
 			  <script type="text/javascript" charset="utf-8">
 			  
           $(document).ready(function() {
             $(".panel_wrapper").height(500);
             $.get("/admin/assets/page_tree", {},
               function(data){
-                $("#pages").html(data);
+                $("#popup_pages").html(data);
               }
             );
           });
