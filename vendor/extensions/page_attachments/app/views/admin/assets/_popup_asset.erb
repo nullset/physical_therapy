@@ -15,7 +15,8 @@
   <td class="date"><%= asset.created_at.to_date %></td>
   <td class="title"><%= asset.title %></td>
   <td class="actions">
-    <div class="show">Show <%= hidden_field_tag :id, asset.id, :id => nil %></div>
-    <div class="delete">Delete <%= hidden_field_tag :id, asset.id, :id => nil %></div>
+    <div class="show">Show</div>
+    <div class="delete">Delete</div>
+    <%= hidden_field_tag :asset_id, asset.id, :id => nil %>
   </td>
 </tr>
