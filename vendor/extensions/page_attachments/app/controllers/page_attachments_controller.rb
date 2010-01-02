@@ -31,7 +31,7 @@ class PageAttachmentsController < ApplicationController
       @page_association.save!
       render :partial => 'admin/pages/nice_asset', :object => @nice_asset
     else
-      render :partial => 'admin/pages/nice_asset_row', :object => @nice_asset
+      render :partial => 'admin/assets/popup_asset', :object => @nice_asset
     end
     # render :update do |page|
     #   # page.insert_html :bottom, 'nice_assets', :partial => 'admin/pages/nice_asset'

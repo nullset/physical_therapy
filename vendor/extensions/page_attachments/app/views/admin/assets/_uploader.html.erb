@@ -35,6 +35,7 @@
           jQuery('#upload_title').val('');
         <%- else -%>
           jQuery("#asset_list tbody").prepend(response);
+          assign_actions();
         <%- end -%>
       }
     });

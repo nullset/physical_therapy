@@ -68,7 +68,7 @@ jQuery(document).ready(function() {
     </thead>
     <tbody>
       <%- @assets.each do |asset| -%>
-        <%= render :partial => 'admin/pages/nice_asset_row', :locals => {:asset => asset} %>
+        <%= render :partial => 'admin/assets/popup_asset', :locals => {:asset => asset} %>
       <%- end -%>
     </tbody>
   </table>
@@ -76,41 +76,4 @@ jQuery(document).ready(function() {
 
 <p><button id="add_nice_asset">+ Upload new asset</button></p>
 <%= render :partial => 'admin/assets/uploader' %>
-
-<%- include_javascript 'extensions/tiny_mce_filter/tiny_mce.js' -%>
-<%- include_javascript 'extensions/tiny_mce_filter/tiny_mce_settings.js' -%>
-<%- include_javascript 'extensions/tiny_mce_filter/tiny_mce_popup.js' -%>
-<script type="text/javascript" charset="utf-8">
-var FileBrowserDialogue = {
-    init : function () {
-        // Here goes your code for setting your custom things onLoad.
-    },
-    mySubmit : function () {
-        var URL = jQuery(".asset img:first").attr('src').replace(/\?\d+$/, ''); // document.my_form.my_field.value;
-        var win = tinyMCEPopup.getWindowArg("window");
-        alert(URL);
-
-        // insert information now
-        win.document.getElementById(tinyMCEPopup.getWindowArg("input")).value = URL;
-
-        // are we an image browser
-        if (typeof(win.ImageDialog) != "undefined") {
-            // we are, so update image dimensions...
-            if (win.ImageDialog.getImageData)
-                win.ImageDialog.getImageData();
-
-            // ... and preview if necessary
-            if (win.ImageDialog.showPreviewImage)
-                win.ImageDialog.showPreviewImage(URL);
-        }
-
-        // close popup window
-        tinyMCEPopup.close();
-    }
-}
-
-  // tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
-  FileBrowserDialogue.init;
-  FileBrowserDialogue.mySubmit();
-</script>
 

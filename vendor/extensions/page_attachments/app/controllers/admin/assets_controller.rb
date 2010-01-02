@@ -25,5 +25,5 @@ class Admin::AssetsController < ApplicationController
     @homepage = Page.find_by_parent_id(nil)
     render :action => "page_tree", :layout => false
   end
-
+  
 end

@@ -1,5 +1,5 @@
 <%- asset = @nice_asset if @nice_asset -%>
-<tr>
+<tr id="asset_<%= asset.id %>">
   <td>
     <div class="asset">
       <%- if asset.image? -%>
@@ -13,10 +13,9 @@
   </td>
   <td><%= asset.filename %></td>
   <td class="date"><%= asset.created_at.to_date %></td>
-  <td class="title"><%= asset.title %></td>
+  <td class="file_title"><%= asset.title %></td>
   <td class="actions">
-    <div class="show">Show</div>
-    <div class="delete">Delete</div>
-    <%= hidden_field_tag :asset_id, asset.id, :id => nil %>
+    <%= link_to '', asset.public_filename, :class => 'show', :rel => asset.public_filename %>
+    <span class="delete" rel="<%= asset.id %>"></span>
   </td>
 </tr>
