@@ -36,11 +36,6 @@ class PageAttachmentsExtension < Radiant::Extension
     
     # admin.nav["content"] << admin.nav_item(:assets, "Assets", "/admin/assets")
     
-    User.class_eval {
-      has_many :buckets
-      has_many :page_attachments, :through => :buckets
-    }
-    
     PagePart.class_eval do
     # Page.class_eval do
       before_save :cleanup

@@ -15,7 +15,11 @@
   <td class="date"><%= asset.created_at.to_date %></td>
   <td class="file_title"><%= asset.title %></td>
   <td class="actions">
-    <%= link_to '', asset.public_filename, :class => 'show', :rel => asset.public_filename %>
+    <%- if asset.image? -%>
+      <%= link_to '', asset.public_filename, :class => 'show image', :rel => asset.public_filename %>
+    <%- else -%>
+      <%= link_to '', asset.public_filename, :class => 'show file' %>
+    <%- end -%>
     <span class="delete" rel="<%= asset.id %>"></span>
   </td>
 </tr>

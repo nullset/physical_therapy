@@ -20,11 +20,8 @@
     });
     
     assign_actions();
-  });
-  
-  function assign_actions() {
-    $("td.actions .show").colorbox();
-    $("td.actions .delete").click(function() {
+
+    $("td.actions span.delete").live("click", function() {
       if (confirm("Are you sure you want to delete this file?\n\nDeleting this file may leave broken links if references to this file exist on the site.")) {
         var id = $(this).attr('rel');
         var row = $(this).closest('tr').attr('id');
@@ -34,6 +31,11 @@
         });
       }
     });
+
+  });
+  
+  function assign_actions() {
+    $("td.actions .show.image").colorbox({maxWidth: "100%", maxHeight: "100%", scalePhotos: true});
   }
 
   $("#asset_list").tablesorter({
