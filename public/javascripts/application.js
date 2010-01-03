@@ -4,7 +4,7 @@ $(document).ready(function() {
   var physician_box = $('#content .content_text .box:first');
   var next_box = $('#content .content_text .box:eq(1)');
   if (next_box.height() > physician_box.height()) {
-    physician_box.height(next_box.height());
+    physician_box.height(next_box.height() - 1);
   }
   
   $('#content .content_text .box_container').append('<div class="line"></div>');
@@ -24,7 +24,7 @@ $(document).ready(function() {
   doctor_excerpts.each(function(i) {
     $(this).css('left', '0');
     if ($(this).height() > doctor_excerpts_max_height) {
-      doctor_excerpts_max_height = $(this).height() - 1;
+      doctor_excerpts_max_height = $(this).height();
     }
   });
   doctor_excerpts.parent().height(doctor_excerpts_max_height);
