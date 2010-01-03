@@ -227,6 +227,25 @@
   float: right;
   width: 45%;
 }
+#content .content_text form#contact dl {
+  margin: 0;
+  padding: 0;
+}
+#content .content_text form#contact dd {
+  margin: 0;
+  padding: 0;
+}
+#content .content_text form#contact dd { margin-bottom: 1em; }
+#content .content_text form#contact dd input {
+  width: 75%;
+  display: block;
+}
+#content .content_text form#contact dd textarea {
+  width: 75%;
+  display: block;
+}
+#content .content_text form#contact dd textarea { height: 10em; }
+#content .content_text form#contact dd .error { color: #ff0000; }
 #content .content_context {
   width: 205px;
   float: right;
