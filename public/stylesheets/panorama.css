@@ -519,7 +519,10 @@ body._sports-medicine #content .content_text h4 { color: #738539; }
 body._sports-medicine #content .content_text h5 { color: #738539; }
 body._sports-medicine #content .content_text h6 { color: #738539; }
 body._sports-medicine #content .content_text h1 { line-height: 1; }
-#sitemap ul { margin-bottom: 0; }
+#sitemap ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
 ul#doctor_excerpt {
   margin: 0;
   padding: 0;
