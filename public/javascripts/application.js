@@ -24,7 +24,7 @@ $(document).ready(function() {
   doctor_excerpts.each(function(i) {
     $(this).css('left', '0');
     if ($(this).height() > doctor_excerpts_max_height) {
-      doctor_excerpts_max_height = $(this).height();
+      doctor_excerpts_max_height = $(this).height() - 1;
     }
   });
   doctor_excerpts.parent().height(doctor_excerpts_max_height);

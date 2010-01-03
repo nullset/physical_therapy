@@ -78,19 +78,19 @@
   position: relative;
 }
 #content #top_nav ul li.last { margin-right: 0; }
-#content #top_nav ul #search { display: inline-block; }
-#content #top_nav ul #search div {
+#content #top_nav ul #cse-search-box { display: inline-block; }
+#content #top_nav ul #cse-search-box div {
   position: relative;
   height: 27px;
 }
-#content #top_nav ul #search label {
+#content #top_nav ul #cse-search-box label {
   background: url(/images/layout/top_nav.png) -483px -2px no-repeat;
   display: inline-block;
   width: 41px;
   height: 27px;
   cursor: pointer;
 }
-#content #top_nav ul #search input {
+#content #top_nav ul #cse-search-box input {
   width: 120px;
   border: 1px solid #a6874e;
   color: #000000;
@@ -98,7 +98,7 @@
   position: relative;
   top: -10px;
 }
-#content #top_nav ul #search button {
+#content #top_nav ul #cse-search-box button {
   background: url(/images/layout/top_nav.png) -652px -2px no-repeat;
   border: none;
   width: 16px;
@@ -142,6 +142,7 @@
   border-top: none;
   width: 462px;
   position: relative;
+  margin-top: 20px;
 }
 #content .content_text .box_container .line {
   position: absolute;
@@ -562,6 +563,7 @@ a { cursor: pointer; }
   position: absolute;
   left: -1000em;
 }
+a:focus { outline: none; }
 .cufon-active body._home #content .content_text h1 {
   font-weight: normal;
   font-size: 182%;

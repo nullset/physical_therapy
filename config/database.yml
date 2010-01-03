@@ -31,8 +31,8 @@ test:
 
 production:
   adapter: mysql
-  database: panorama_new
-  username: root
+  database: panorama
+  username: 
   password: 
   host: localhost
 
