@@ -1,14 +1,11 @@
 body._home .overview .line {
   top: 174px;
 }
-#content #top_nav ul #search {
+#content #top_nav ul #cse-search-box {
   position: absolute;
   left: 0;
   top: 0;
-  width: 200px;
 }
-#content #top_nav ul #search button {
-  position: relative;
-  top: -4px;
-  left: 5px;
+#content #top_nav ul #cse-search-box div {
+  width: 177px;
 }
