@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>public/javascripts/application.js</string>
+	<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -34,6 +34,34 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>17</integer>
+		</dict>
+		<key>public/stylesheets/ie7.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>public/stylesheets/panorama.less</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
 		</dict>
 		<key>vendor/extensions/page_attachments/app/models/page_attachment.rb</key>
 		<dict>
@@ -77,6 +105,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>vendor/extensions/utility_tags/app/models/utility_tags.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>141</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>114</integer>
+		</dict>
 		<key>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</key>
 		<dict>
 			<key>caret</key>
@@ -95,6 +137,9 @@
 	<key>openDocuments</key>
 	<array>
 		<string>public/javascripts/application.js</string>
+		<string>public/stylesheets/panorama.less</string>
+		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
+		<string>public/stylesheets/ie7.css</string>
 		<string>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</string>
 		<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
 		<string>vendor/extensions/page_attachments/app/models/page_attachment.rb</string>

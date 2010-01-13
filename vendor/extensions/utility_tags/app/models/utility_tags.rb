@@ -142,15 +142,15 @@ module UtilityTags
 
     page = tag.locals.page
     excerpt = page.part(name).content rescue nil
-    if excerpt
-      doc = Nokogiri::HTML.fragment(excerpt)
-      excerpted_text = doc.css('p')
-      excerpted_text.search('img').remove
-      unless excerpted_text.blank?
-        truncated = excerpted_text.to_s.gsub(/<p>\s*&nbsp;\s*<\/p>/, '').gsub(/<\/?.*?>/, '').gsub(/&amp;/, '&')[0..num.to_i]
-        content = unescape_radius_tags("<p>#{truncated}#{truncate_string}</p>")
-      end
-    end
+    # if excerpt
+    #   doc = Nokogiri::HTML.fragment(excerpt)
+    #   excerpted_text = doc.css('p')
+    #   excerpted_text.search('img').remove
+    #   unless excerpted_text.blank?
+    #     truncated = excerpted_text.to_s.gsub(/<p>\s*&nbsp;\s*<\/p>/, '').gsub(/<\/?.*?>/, '').gsub(/&amp;/, '&')[0..num.to_i]
+    #     content = unescape_radius_tags("<p>#{truncated}#{truncate_string}</p>")
+    #   end
+    # end
   end
 
   tag 'excerpt_image' do |tag|
