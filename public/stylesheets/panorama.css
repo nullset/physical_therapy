@@ -456,10 +456,7 @@
   padding-left: 0;
 }
 #footer ul.subnav { font-size: 85%; }
-body._home #header {
-  background: #582863 url(/images/header/home.jpg) right bottom no-repeat;
-  height: 260px;
-}
+body._home #header { height: 260px; }
 body._home #sidebar #main_menu ul { height: 115px; }
 body._home .overview { position: relative; }
 body._home .overview .line {
@@ -507,10 +504,7 @@ body._home .overview ul #more_patient_education { background-position: -153px to
 body._home .overview ul #more_patient_education:hover { background-position: -153px bottom; }
 body._home .overview ul #more_payment_options { background-position: -306px top; }
 body._home .overview ul #more_payment_options:hover { background-position: -306px bottom; }
-body._sports-medicine #header {
-  background: url(/images/header/sports_medicine.jpg);
-  height: 100px;
-}
+body._sports-medicine #header { height: 100px; }
 body._sports-medicine #main_menu ul li a.sports-medicine { background: #738539; }
 body._sports-medicine #content .content_text h1 { color: #738539; }
 body._sports-medicine #content .content_text h2 { color: #738539; }
