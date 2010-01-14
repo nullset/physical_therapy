@@ -457,7 +457,10 @@
   padding-left: 0;
 }
 #footer ul.subnav { font-size: 85%; }
-body._home #header { height: 260px; }
+body._home #header {
+  background: #582863;
+  height: 260px;
+}
 body._home #sidebar #main_menu ul { height: 115px; }
 body._home .overview { position: relative; }
 body._home .overview .line {
@@ -505,7 +508,10 @@ body._home .overview ul #more_patient_education { background-position: -153px to
 body._home .overview ul #more_patient_education:hover { background-position: -153px bottom; }
 body._home .overview ul #more_payment_options { background-position: -306px top; }
 body._home .overview ul #more_payment_options:hover { background-position: -306px bottom; }
-body._sports-medicine #header { height: 100px; }
+body._sports-medicine #header {
+  background: #65822e;
+  height: 100px;
+}
 body._sports-medicine #main_menu ul li a.sports-medicine { background: #65822e; }
 body._sports-medicine #content .content_text h1 { color: #65822e; }
 body._sports-medicine #content .content_text h2 { color: #65822e; }
@@ -514,7 +520,10 @@ body._sports-medicine #content .content_text h4 { color: #65822e; }
 body._sports-medicine #content .content_text h5 { color: #65822e; }
 body._sports-medicine #content .content_text h6 { color: #65822e; }
 body._sports-medicine #content .content_text h1 { line-height: 1; }
-body._spine #header { height: 100px; }
+body._spine #header {
+  background: #b7985f;
+  height: 100px;
+}
 body._spine #main_menu ul li a.spine { background: #b7985f; }
 body._spine #content .content_text h1 { color: #b7985f; }
 body._spine #content .content_text h2 { color: #b7985f; }
@@ -523,7 +532,10 @@ body._spine #content .content_text h4 { color: #b7985f; }
 body._spine #content .content_text h5 { color: #b7985f; }
 body._spine #content .content_text h6 { color: #b7985f; }
 body._spine #content .content_text h1 { line-height: 1; }
-body._total-joint #header { height: 100px; }
+body._total-joint #header {
+  height: 100px;
+  background: #d38e02;
+}
 body._total-joint #main_menu ul li a.total-joint { background: #d38e02; }
 body._total-joint #content .content_text h1 { color: #d38e02; }
 body._total-joint #content .content_text h2 { color: #d38e02; }
@@ -532,7 +544,10 @@ body._total-joint #content .content_text h4 { color: #d38e02; }
 body._total-joint #content .content_text h5 { color: #d38e02; }
 body._total-joint #content .content_text h6 { color: #d38e02; }
 body._total-joint #content .content_text h1 { line-height: 1; }
-body._trauma #header { height: 100px; }
+body._trauma #header {
+  background: #aab300;
+  height: 100px;
+}
 body._trauma #main_menu ul li a.trauma { background: #aab300; }
 body._trauma #content .content_text h1 { color: #aab300; }
 body._trauma #content .content_text h2 { color: #aab300; }
@@ -541,7 +556,10 @@ body._trauma #content .content_text h4 { color: #aab300; }
 body._trauma #content .content_text h5 { color: #aab300; }
 body._trauma #content .content_text h6 { color: #aab300; }
 body._trauma #content .content_text h1 { line-height: 1; }
-body._foot-and-ankle #header { height: 100px; }
+body._foot-and-ankle #header {
+  height: 100px;
+  background: #a85a4d;
+}
 body._foot-and-ankle #main_menu ul li a.foot-and-ankle { background: #a85a4d; }
 body._foot-and-ankle #content .content_text h1 { color: #a85a4d; }
 body._foot-and-ankle #content .content_text h2 { color: #a85a4d; }
@@ -550,8 +568,11 @@ body._foot-and-ankle #content .content_text h4 { color: #a85a4d; }
 body._foot-and-ankle #content .content_text h5 { color: #a85a4d; }
 body._foot-and-ankle #content .content_text h6 { color: #a85a4d; }
 body._foot-and-ankle #content .content_text h1 { line-height: 1; }
-body._hand-and-elbow #header { height: 100px; }
-body._hand-and-elbow #main_menu ul li a.hand-and-elbow { background: #65822e; }
+body._hand-and-elbow #header {
+  background: #54bdec;
+  height: 100px;
+}
+body._hand-and-elbow #main_menu ul li a.hand-and-elbow { background: #54bdec; }
 body._hand-and-elbow #content .content_text h1 { color: #54bdec; }
 body._hand-and-elbow #content .content_text h2 { color: #54bdec; }
 body._hand-and-elbow #content .content_text h3 { color: #54bdec; }
