@@ -112,6 +112,7 @@
   margin-left: 25px;
   width: 462px;
   float: left;
+  overflow: hidden;
 }
 #content .content_text h1 { margin: 0 0 10px; }
 #content .content_text h2 { margin: 0 0 10px; }
