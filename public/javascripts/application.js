@@ -58,4 +58,11 @@ $(document).ready(function() {
   $('.print').click(function() {
     window.print();
   });
+  
+  // Home page boxes                                                                                          
+  $(".overview li").click(function() {
+    link = $(this).find("a:first").attr('href');
+    window.location = link;
+  });
+  
 });
