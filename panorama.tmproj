@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
+	<string>public/stylesheets/panorama.less</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -40,14 +40,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>59</integer>
+				<integer>65</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>17</integer>
+			<integer>24</integer>
 		</dict>
 		<key>public/stylesheets/ie7.css</key>
 		<dict>
@@ -63,6 +63,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>public/stylesheets/panorama.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>17</integer>
+				<key>line</key>
+				<integer>19</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>27</integer>
+		</dict>
 		<key>public/stylesheets/panorama.less</key>
 		<dict>
 			<key>caret</key>
@@ -70,12 +84,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>155</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>133</integer>
 		</dict>
 		<key>vendor/extensions/page_attachments/app/models/page_attachment.rb</key>
 		<dict>
@@ -149,6 +163,36 @@
 				<integer>155</integer>
 			</dict>
 		</dict>
+		<key>vendor/radiant/app/models/standard_tags.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>14</integer>
+				<key>line</key>
+				<integer>717</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>687</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>713</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>14</integer>
+				<key>line</key>
+				<integer>717</integer>
+			</dict>
+		</dict>
 		<key>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</key>
 		<dict>
 			<key>caret</key>
@@ -168,7 +212,9 @@
 	<array>
 		<string>public/javascripts/application.js</string>
 		<string>public/stylesheets/panorama.less</string>
+		<string>public/stylesheets/panorama.css</string>
 		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
+		<string>vendor/radiant/app/models/standard_tags.rb</string>
 		<string>config/deploy.rb</string>
 		<string>public/stylesheets/ie7.css</string>
 		<string>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</string>
