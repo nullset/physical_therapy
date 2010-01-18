@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>public/stylesheets/panorama.less</string>
+	<string>config/deploy.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -49,20 +49,6 @@
 			<key>firstVisibleLine</key>
 			<integer>24</integer>
 		</dict>
-		<key>public/stylesheets/ie7.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>9</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>public/stylesheets/panorama.css</key>
 		<dict>
 			<key>caret</key>
@@ -76,20 +62,6 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>27</integer>
-		</dict>
-		<key>public/stylesheets/panorama.less</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>155</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>133</integer>
 		</dict>
 		<key>vendor/extensions/page_attachments/app/models/page_attachment.rb</key>
 		<dict>
@@ -211,12 +183,10 @@
 	<key>openDocuments</key>
 	<array>
 		<string>public/javascripts/application.js</string>
-		<string>public/stylesheets/panorama.less</string>
 		<string>public/stylesheets/panorama.css</string>
 		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
 		<string>vendor/radiant/app/models/standard_tags.rb</string>
 		<string>config/deploy.rb</string>
-		<string>public/stylesheets/ie7.css</string>
 		<string>vendor/radiant/vendor/radius/lib/radius/parser/scan.rb</string>
 		<string>vendor/extensions/page_attachments/page_attachments_extension.rb</string>
 		<string>vendor/extensions/page_attachments/app/models/page_attachment.rb</string>
