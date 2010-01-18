@@ -85,7 +85,6 @@ Radiant::Initializer.run do |config|
     # }
   end
   
-  SiteController.cache_timeout = 60.minutes
 end
 
 Haml::Template.options[:format] = :html5

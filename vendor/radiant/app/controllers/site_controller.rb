@@ -5,7 +5,7 @@ class SiteController < ApplicationController
   
   cattr_writer :cache_timeout
   def self.cache_timeout
-    @@cache_timeout ||= 5.minutes
+    @@cache_timeout ||= 60.minutes
   end
   
   def show_page
