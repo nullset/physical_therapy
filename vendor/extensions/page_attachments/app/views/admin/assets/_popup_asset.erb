@@ -3,7 +3,7 @@
   <td>
     <div class="asset">
       <%- if asset.image? -%>
-        <%= image_tag(asset.public_filename(:icon)) %>
+        <%# image_tag(asset.public_filename(:icon)) %>
         <%= hidden_field_tag :url, asset.public_filename(:icon), :id => nil %>
       <%- else -%>  
         <%= hidden_field_tag :url, asset.public_filename, :id => nil %>
