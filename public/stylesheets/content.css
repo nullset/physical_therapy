@@ -6,3 +6,12 @@ img.floatRight {
   float: right;
   margin: 0 0 1em 1em;
 }
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
