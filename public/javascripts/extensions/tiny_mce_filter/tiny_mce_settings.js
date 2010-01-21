@@ -4,7 +4,7 @@ tinyMCE.init({
     elements : "myEditor",
     theme : "advanced",
     convert_urls : false,
-    // content_css : "/stylesheets/content.css",
+    content_css : "/stylesheets/content.css",
     height: "370",
     // plugins : "preview,searchreplace,contextmenu,paste,style,table,codeprotect,radiantimage,xhtmlxtras,radiantflash,radiantvideo",
     plugins : "preview,searchreplace,contextmenu,paste,style,table,codeprotect,radiantimage,radiantlink,xhtmlxtras",
