@@ -368,10 +368,6 @@
   margin: 0;
   color: #ffffff;
 }
-#sidebar #main_menu h2 a {
-  display: block;
-  height: 30px;
-}
 #sidebar #main_menu ul {
   margin: 0;
   padding: 0 0 15px 0;
@@ -395,6 +391,10 @@
   background: #a6874e url(/images/layout/h2_sidebar.png) 0 0;
   height: 30px;
   margin: 0;
+}
+#sidebar h2 a {
+  display: block;
+  height: 30px;
 }
 #sidebar h2 .inverted {
   color: #ffffff;
