@@ -1,10 +1,10 @@
 tinyMCE.init({
     language : "en",
-    mode : "exact",
-    elements : "myEditor",
+    // mode : "exact",
+    content_css : "/stylesheets/tinymce_editor.css",
+    // elements : "myEditor",
     theme : "advanced",
     convert_urls : false,
-    content_css : "/stylesheets/content.css",
     height: "370",
     // plugins : "preview,searchreplace,contextmenu,paste,style,table,codeprotect,radiantimage,xhtmlxtras,radiantflash,radiantvideo",
     plugins : "preview,searchreplace,contextmenu,paste,style,table,codeprotect,radiantimage,radiantlink,xhtmlxtras",
