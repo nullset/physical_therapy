@@ -32,7 +32,7 @@ function init() {
 	var elm = inst.getFocusElement();
 	var action = "insert";
 	var html;
-
+	
 	document.getElementById('hrefbrowsercontainer').innerHTML = getBrowserHTML('hrefbrowser','href','file','advlink');
 	document.getElementById('popupurlbrowsercontainer').innerHTML = getBrowserHTML('popupurlbrowser','popupurl','file','advlink');
   // document.getElementById('linklisthrefcontainer').innerHTML = getLinkListHTML('linklisthref','href');
@@ -54,7 +54,15 @@ function init() {
 		document.getElementById('popupurl').style.width = '180px';
 
 	elm = tinyMCE.getParentElement(elm, "a");
+
 	if (elm != null && elm.nodeName == "A")
+	  var targetlist = document.getElementById('targetlistcontainer');
+	  var targetoptions = targetlist.getElementsByTagName('option');
+	  for (i = 0; i < targetoptions.length; i++) {
+	    if (targetoptions[i].value == elm.getAttribute('target')) {
+        targetoptions[i].selected = 'selected';
+	    }
+	  }
 		action = "update";
 
 	formObj.insert.value = tinyMCE.getLang('lang_' + action, 'Insert', true); 

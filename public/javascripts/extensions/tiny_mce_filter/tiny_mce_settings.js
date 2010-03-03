@@ -37,7 +37,7 @@ tinyMCE.init({
     +"a[accesskey|charset|class|coords|dir<ltr?rtl|href|id|lang"
       +"|onblur|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup"
       +"|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|rel|rev"
-      +"|style|tabindex|title|type],"
+      +"|style|tabindex|target|title|type],"
       // +"|shape<circle?default?poly?rect|style|tabindex|title|type],"
     +"abbr[align|class|dir<ltr?rtl|id|onclick"
       +"|ondblclick|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove"
@@ -158,17 +158,21 @@ function blockElementAlignClean(type, value) {
         case "get_from_editor":  //not used but good to keep
             //console.info("Value HTML string: ",value);
             //value = value.replace(/align=(['"])(\w+)(['"])/,"style=$1text-align: $2;$3");
+            // alert("get_from_editor: " + value );
             break;
 
         case "insert_to_editor": //not used but good to keep
             //console.info("Value HTML string: ",value);
             //value = value.replace(/align=(['"])(\w+)(['"])/,"style=$1text-align: $2;$3");
             // Do custom cleanup code here
+            // alert("insert_to_editor: " + value );
             break;
 
         case "get_from_editor_dom": //convert into inline styles
             // console.info("Value DOM Element ",value);
             // Do custom cleanup code here
+            // alert("get_from_editor_dom: " + value );
+            
             var paragraphs = $A(value.getElementsByTagName('p'));
             var divs = $A(value.getElementsByTagName('div'));
             paragraphs.each(function (paragraph) {
@@ -188,6 +192,8 @@ function blockElementAlignClean(type, value) {
         case "insert_to_editor_dom": //convert back into align, to allow for changes to be made though the text align buttons
             // console.info("Value DOM Element: ",value);
             // Do custom cleanup code here
+            // alert("insert_to_editor_dom: " + value );
+            
             var paragraphs = $A(value.getElementsByTagName('p'));
             var divs = $A(value.getElementsByTagName('div'));
             paragraphs.each(function (paragraph) {
