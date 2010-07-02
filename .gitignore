@@ -1,2 +1,6 @@
 config/deploy.rb
 config/database.yml
+public/page_attachments
+tmp/
+.DS_Store
+log/
