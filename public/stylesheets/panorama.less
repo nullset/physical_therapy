@@ -289,7 +289,7 @@
       float: right;
       width: 45%;
     }
-    form#contact {
+    form.contact {
       dl, dd {
         margin: 0;
         padding: 0;
@@ -403,11 +403,30 @@
       }
     }
     .box.appointment {
-      background: #eef0cc url(/images/layout/boxes.png) 0 -153px no-repeat;
-      height: 67px;
+      background: #eef0cc url(/images/layout/boxes.png) 0 -220px no-repeat;
+      min-height: 67px;
+      padding-top: 72px;
+      form {
+        margin-bottom: 1em;
+        dl {
+          margin: 0;
+          dt {
+            font-weight: bold;
+            color: #819004;
+            font-size: 93%;
+          }
+          dd {
+            margin: 0 0 .5em 0;
+            input, textarea {
+              width: 100%;
+              border: 1px solid #9bae05;
+            }
+          }
+        }
+      }
     }
     .box.share {
-      background: #e3e4e4 url(/images/layout/boxes.png) 0 -220px no-repeat;
+      background: #e3e4e4 url(/images/layout/boxes.png) 0 -153px no-repeat;
       height: 67px;
       position: relative;
       ul {
@@ -867,6 +886,10 @@ a {
   position: absolute;
   left: -1000em;
 }
+.error {
+  color: #f00;
+}
+
 a:focus { outline: none; }
 
 /* Cufon overrides */
