@@ -295,7 +295,7 @@
 #content .content_context .sand {
   background: #ede7dc;
 }
-#content .content_context .sand h2 {
+#content .content_context .sand h4 {
   color: #a6874e;
 }
 #content .content_context .blue {
@@ -433,7 +433,7 @@
   width: 205px;
   margin: 0;
 }
-#sidebar #main_menu h2 {
+#sidebar #main_menu h4 {
   background: #a6874e url(/images/layout/h2_sidebar.png) 0 0;
   height: 30px;
   margin: 0;
@@ -460,30 +460,30 @@
 #sidebar #main_menu ul li a :hover {
   text-decoration: underline;
 }
-#sidebar h2 {
+#sidebar h4 {
   background: #a6874e url(/images/layout/h2_sidebar.png) 0 0;
   height: 30px;
   margin: 0;
 }
-#sidebar h2 a {
+#sidebar h4 a {
   display: block;
   height: 30px;
 }
-#sidebar h2 .inverted {
+#sidebar h4 .inverted {
   color: #fff;
   text-shadow: #a6874e 0px 0px 10px;
 }
-#sidebar h2.patient_resources {
+#sidebar h4.patient_resources {
   background-position: 0 -30px;
 }
-#sidebar h2.online_services {
+#sidebar h4.online_services {
   background-position: 0 -60px;
   margin-bottom: 10px;
 }
-#sidebar h2.learn_more {
+#sidebar h4.learn_more {
   background-position: 0 -90px;
 }
-#sidebar h2.referring_physicians {
+#sidebar h4.referring_physicians {
   background-position: 0 -120px;
 }
 #sidebar a {
@@ -848,7 +848,7 @@ a:focus {
 .cufon-active #content .box_container h2 {
   font-size: 116%;
 }
-.cufon-active #content .content_context .box .inner h2 {
+.cufon-active #content .content_context .box .inner h4 {
   font-size: 153.9%;
   font-weight: normal;
   line-height: 1;

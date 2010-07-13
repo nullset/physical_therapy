@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>public/stylesheets/panorama.less</string>
+	<string>config/deploy.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -35,19 +35,49 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>config/deploy.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>33</integer>
+				<key>line</key>
+				<integer>31</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>17</integer>
+		</dict>
 		<key>public/stylesheets/panorama.less</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>26</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>414</integer>
+				<integer>408</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>385</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>405</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>408</integer>
+			</dict>
 		</dict>
 		<key>vendor/extensions/mailer/app/controllers/mail_controller.rb</key>
 		<dict>
@@ -142,6 +172,7 @@
 		<string>vendor/extensions/mailer/app/models/mail.rb</string>
 		<string>vendor/extensions/mailer/lib/mailer_tags.rb</string>
 		<string>public/stylesheets/panorama.less</string>
+		<string>config/deploy.rb</string>
 		<string>vendor/extensions/page_attachments/app/controllers/page_attachments_controller.rb</string>
 		<string>config/database.yml</string>
 	</array>
