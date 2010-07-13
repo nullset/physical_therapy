@@ -766,7 +766,7 @@ ul#doctor_excerpt .text {
   width: 100px;
   font-size: 93%;
 }
-ul#doctor_excerpt .text h3 {
+ul#doctor_excerpt .text h5 {
   margin: 0 0 7px;
   color: #582863;
 }
@@ -838,7 +838,12 @@ a:focus {
 */
 
 }
-.cufon-active #content h1, .cufon-active #content h2, .cufon-active #content h3 {
+.cufon-active #content h1,
+.cufon-active #content h2,
+.cufon-active #content h3,
+.cufon-active #content h4,
+.cufon-active #content h5,
+.cufon-active #content h6 {
   line-height: 1;
 }
 .cufon-active #content .content_text h1 {
