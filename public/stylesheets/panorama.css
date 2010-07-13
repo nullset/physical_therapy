@@ -613,19 +613,19 @@ body._home .overview ul li a {
   display: block;
   text-align: right;
 }
-body._home .overview ul #more_about_panorama :hover {
+body._home .overview ul #more_about_panorama:hover {
   background-position: 0 bottom;
 }
 body._home .overview ul #more_patient_education {
   background-position: -153px top;
 }
-body._home .overview ul #more_patient_education :hover {
+body._home .overview ul #more_patient_education:hover {
   background-position: -153px bottom;
 }
 body._home .overview ul #more_payment_options {
   background-position: -306px top;
 }
-body._home .overview ul #more_payment_options :hover {
+body._home .overview ul #more_payment_options:hover {
   background-position: -306px bottom;
 }
 body._sports-medicine #header {
