@@ -173,6 +173,21 @@ module UtilityTags
     tag.expand if tag.locals.first_child
   end
   
+  desc %{
+    Generates an embedded YouTube video
+
+    *Usage:*
+    
+    <pre><code><r:youtube [url="string"|key="string"] [width="integer(464)" height="integer(348)"] /></code></pre>
+  }
+  tag 'youtube' do |tag|
+    raise TagError.new("`youtube' tag must contain a `url' or a `key' attribute.") unless tag.attr.has_key?('url') || tag.attr.has_key?('key')
+    width = tag.attr.has_key?('width') ? tag.attr['width'] : 464
+    height = tag.attr.has_key?('height') ? tag.attr['height'] : 348
+    key = tag.attr.has_key?('key') ? tag.attr['key'] : tag.attr['url'].scan(/\?v=([a-zA-Z0-9]+)/)[0][0]
+    url = "http://www.youtube-nocookie.com/v/" + key + "&amp;hl=en_US&amp;fs=1?rel=0"
+    youtube = %{<object width="#{width}" height="#{height}"><param name="movie" value=#{url}"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="#{url}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="#{width}" height="#{height}"></embed></object>}
+  end
   
 end
 
