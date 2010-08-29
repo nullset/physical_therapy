@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>public/stylesheets/panorama.less</string>
+	<string>public/javascripts/extensions/tiny_mce_filter/tiny_mce_settings.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -76,6 +76,36 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>30</integer>
+		</dict>
+		<key>public/javascripts/extensions/tiny_mce_filter/tiny_mce_settings.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>28</integer>
+				<key>line</key>
+				<integer>153</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>148</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>25</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>28</integer>
+				<key>line</key>
+				<integer>153</integer>
+			</dict>
 		</dict>
 		<key>public/stylesheets/panorama.css</key>
 		<dict>
@@ -205,6 +235,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>vendor/extensions/utility_tags/app/models/utility_tags.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>189</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>161</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
@@ -214,6 +258,8 @@
 		<string>vendor/extensions/mailer/app/models/mail.rb</string>
 		<string>vendor/extensions/mailer/lib/mailer_tags.rb</string>
 		<string>public/stylesheets/panorama.less</string>
+		<string>public/javascripts/extensions/tiny_mce_filter/tiny_mce_settings.js</string>
+		<string>vendor/extensions/utility_tags/app/models/utility_tags.rb</string>
 		<string>public/javascripts/application.js</string>
 		<string>public/javascripts/agenda_500-agenda_700-agenda_italic_500-agenda_italic_700.font.js</string>
 		<string>public/stylesheets/panorama.css</string>
@@ -224,6 +270,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{0, 132}, {1031, 746}}</string>
+	<string>{{13, -64}, {1044, 443}}</string>
 </dict>
 </plist>
