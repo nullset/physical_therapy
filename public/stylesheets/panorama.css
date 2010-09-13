@@ -29,6 +29,7 @@
   position: absolute;
   left: -205px;
   top: -15px;
+  background: #582863;
 }
 #content h1.logo a {
   display: block;
@@ -45,35 +46,41 @@
   border-bottom: 1px dotted #333333;
   margin-bottom: 22px;
   height: 29px;
+  font-size: 131%;
+  font-weight: bold;
+  /*    a.about_panorama {
+      width: 103px;
+      background-position: 0 0;
+    }
+    a.our_physicians {
+      width: 90px;
+      background-position: -123px 0;
+    }
+    a.our_locations {
+      width: 87px;
+      background-position: -233px 0;
+    }
+    a.online_community {
+      width: 116px;
+      background-position: -341px 0;
+    }
+*/
+
 }
 #content #top_nav a {
   /*      padding: 3px 5px 1px;*/
 
-  background: url(/images/layout/top_nav.png) no-repeat;
+  /*      background: url(/images/layout/top_nav.png) no-repeat;*/
+
   height: 27px;
+  line-height: 27px;
   overflow: hidden;
   display: inline-block;
   text-decoration: none;
   border-bottom: 2px solid #fff;
 }
-#content #top_nav a :hover {
+#content #top_nav a:hover {
   border-bottom: 2px solid #a6874e;
-}
-#content #top_nav a.about_panorama {
-  width: 103px;
-  background-position: 0 0;
-}
-#content #top_nav a.our_physicians {
-  width: 90px;
-  background-position: -123px 0;
-}
-#content #top_nav a.our_locations {
-  width: 87px;
-  background-position: -233px 0;
-}
-#content #top_nav a.online_community {
-  width: 116px;
-  background-position: -341px 0;
 }
 #content #top_nav * {
   color: #a6874e;
@@ -97,21 +104,28 @@
 #content #top_nav ul #cse-search-box div {
   position: relative;
   height: 27px;
+  line-height: 27px;
 }
 #content #top_nav ul #cse-search-box label {
-  background: url(/images/layout/top_nav.png) -483px -2px no-repeat;
+  /*          background: url(/images/layout/top_nav.png) -483px -2px no-repeat;*/
+
   display: inline-block;
   width: 41px;
-  height: 27px;
   cursor: pointer;
+  border-bottom: 2px solid #fff;
+  height: 27px;
+  overflow: hidden;
 }
 #content #top_nav ul #cse-search-box input {
   width: 120px;
   border: 1px solid #a6874e;
   color: #000;
   font-weight: normal;
-  position: relative;
-  top: -10px;
+  position: absolute;
+  /*          top: -10px;*/
+
+  top: .4em;
+  left: 3.5em;
 }
 #content #top_nav ul #cse-search-box button {
   background: url(/images/layout/top_nav.png) -652px -2px no-repeat;
@@ -120,8 +134,10 @@
   height: 27px;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: -22px;
+  top: .1em;
+  /*          right: -22px;*/
+
+  right: -155px;
 }
 #content .content_text {
   margin-left: 25px;
@@ -427,6 +443,7 @@
 }
 #sidebar .logo {
   display: block;
+  background: #582863;
 }
 #sidebar #main_menu {
   background: #582863;
@@ -552,7 +569,7 @@
   margin-left: 4px;
   padding-left: 6px;
 }
-#footer ul li :first-child {
+#footer ul li:first-child {
   border: none;
   margin-left: 0;
   padding-left: 0;
@@ -564,6 +581,9 @@
 body._home #header {
   background: #582863;
   height: 260px;
+}
+body._home #sidebar .logo {
+  padding-bottom: 160px;
 }
 body._home #sidebar #main_menu ul {
   height: 115px;

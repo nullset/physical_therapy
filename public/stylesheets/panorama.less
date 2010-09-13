@@ -54,6 +54,7 @@
     position: absolute;
     left: -205px;
     top: -15px;
+    background: #582863;
     a {
       display: block;
       width: 205px;
@@ -70,20 +71,24 @@
     border-bottom: @border;
     margin-bottom: 22px;
     height: 29px;
+    font-size: 131%;
+    font-weight: bold;
     
     a {
 /*      padding: 3px 5px 1px;*/
-      background: url(/images/layout/top_nav.png) no-repeat;
+/*      background: url(/images/layout/top_nav.png) no-repeat;*/
       height: 27px;
+      line-height: 27px;
       overflow: hidden;
       display: inline-block;
       text-decoration: none;
       border-bottom: 2px solid #fff;
-      :hover {
-        border-bottom: 2px solid @sand;
-      }
     }
-    a.about_panorama {
+    a:hover {
+      border-bottom: 2px solid @sand;
+    }
+    
+/*    a.about_panorama {
       width: 103px;
       background-position: 0 0;
     }
@@ -99,6 +104,7 @@
       width: 116px;
       background-position: -341px 0;
     }
+*/
     * {
       color: @sand;
       font-weight: bold;
@@ -120,21 +126,27 @@
         div {
           position: relative;
           height: 27px;
+          line-height: 27px;
         }
         label {
-          background: url(/images/layout/top_nav.png) -483px -2px no-repeat;
+/*          background: url(/images/layout/top_nav.png) -483px -2px no-repeat;*/
           display: inline-block;
           width: 41px;
-          height: 27px;
           cursor: pointer;
+          border-bottom: 2px solid #fff;
+          
+          height: 27px;
+          overflow: hidden;
         }
         input {
           width: 120px;
           border: 1px solid @sand;
           color: #000;
           font-weight: normal;
-          position: relative;
-          top: -10px;
+          position: absolute;
+/*          top: -10px;*/
+          top: .4em;
+          left: 3.5em;
         }
         button {
           background: url(/images/layout/top_nav.png) -652px -2px no-repeat;
@@ -143,8 +155,9 @@
           height: 27px;
           cursor: pointer;
           position: absolute;
-          top: 0;
-          right: -22px;
+          top: .1em;
+/*          right: -22px;*/
+          right: -155px;
         }
       }
     }
@@ -463,6 +476,7 @@
   
   .logo {
     display: block;
+    background: #582863;
   }
   #main_menu {
     background: @purple;
@@ -592,11 +606,11 @@
       border-left: 1px solid @sand;
       margin-left: 4px;
       padding-left: 6px;
-      :first-child {
-        border: none;
-        margin-left: 0;
-        padding-left: 0;
-      }
+    }
+    li:first-child {
+      border: none;
+      margin-left: 0;
+      padding-left: 0;
     }
   }
   ul.subnav {
@@ -613,6 +627,9 @@ body._home {
     height: 260px;
   }
   #sidebar {
+    .logo {
+      padding-bottom: 160px;
+    }
     #main_menu {
       ul {
         height: 115px;
@@ -938,3 +955,4 @@ a:focus { outline: none; }
     }
   }
 }
+

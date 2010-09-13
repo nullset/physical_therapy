@@ -1,8 +1,8 @@
-img.floatLeft {
+img.floatLeft, img.floatleft {
   float: left;
   margin: 0 1em 1em 0;
 }
-img.floatRight {
+img.floatRight, img.floatright {
   float: right;
   margin: 0 0 1em 1em;
 }
