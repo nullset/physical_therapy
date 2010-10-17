@@ -42,6 +42,9 @@
 #content a :hover {
   color: #26aefe;
 }
+#content object, #content embed {
+  margin-bottom: 1em;
+}
 #content #top_nav {
   border-bottom: 1px dotted #333333;
   margin-bottom: 22px;
@@ -220,21 +223,21 @@
   width: 80px;
   margin-right: 15px;
 }
-#content .content_text .box_container .physician_list {
+#content .content_text .box_container .physician_list, #content .content_text .box_container .primary {
   background: #e4dbca;
 }
-#content .content_text .box_container .physician_list ul {
+#content .content_text .box_container .physician_list ul, #content .content_text .box_container .primary ul {
   margin: 0;
   padding: 0;
 }
-#content .content_text .box_container .physician_list ul li {
+#content .content_text .box_container .physician_list ul li, #content .content_text .box_container .primary ul li {
   list-style: none;
   margin: 4px 0;
 }
-#content .content_text .box_container .physician_list ul li a {
+#content .content_text .box_container .physician_list ul li a, #content .content_text .box_container .primary ul li a {
   text-decoration: none;
 }
-#content .content_text .box_container .physician_list ul li a :hover {
+#content .content_text .box_container .physician_list ul li a :hover, #content .content_text .box_container .primary ul li a :hover {
   text-decoration: underline;
 }
 #content .content_text ul.headshots {
@@ -408,6 +411,10 @@
   width: 100%;
   border: 1px solid #9bae05;
 }
+#content .content_context .box.appointment form dl dd input[type=checkbox] {
+  width: auto;
+  border: inherit;
+}
 #content .content_context .box.share {
   background: #e3e4e4 url(/images/layout/boxes.png) 0 -153px no-repeat;
   height: 67px;
@@ -440,6 +447,18 @@
   width: 205px;
   float: left;
   color: #a6874e;
+  /*  h4.online_services {
+    background-position: 0 -60px;
+    margin-bottom: 10px;
+  }
+  h4.learn_more {
+    background-position: 0 -90px;
+  }
+  h4.referring_physicians {
+    background-position: 0 -120px;
+  }
+*/
+
 }
 #sidebar .logo {
   display: block;
@@ -477,31 +496,37 @@
 #sidebar #main_menu ul li a :hover {
   text-decoration: underline;
 }
-#sidebar h4 {
+#sidebar h4.our_services, #sidebar h4.patient_resources {
   background: #a6874e url(/images/layout/h2_sidebar.png) 0 0;
   height: 30px;
   margin: 0;
+  padding: 0;
 }
-#sidebar h4 a {
+#sidebar h4.our_services a, #sidebar h4.patient_resources a {
   display: block;
   height: 30px;
 }
-#sidebar h4 .inverted {
+#sidebar h4.our_services .inverted, #sidebar h4.patient_resources .inverted {
   color: #fff;
   text-shadow: #a6874e 0px 0px 10px;
 }
 #sidebar h4.patient_resources {
   background-position: 0 -30px;
 }
-#sidebar h4.online_services {
-  background-position: 0 -60px;
-  margin-bottom: 10px;
+#sidebar h4.evaluation {
+  padding: 0;
 }
-#sidebar h4.learn_more {
-  background-position: 0 -90px;
+#sidebar h4.evaluation a {
+  display: block;
+  padding: 9px 23px;
+  background: #DED4E0;
+  color: #582863;
 }
-#sidebar h4.referring_physicians {
-  background-position: 0 -120px;
+#sidebar h4 {
+  background: #E4DBCA;
+  font-size: 123.1%;
+  line-height: 1;
+  padding: 9px 20px;
 }
 #sidebar a {
   text-decoration: none;
@@ -580,10 +605,12 @@
 /* PAGE SPECIFIC */
 body._home #header {
   background: #582863;
-  height: 260px;
+  /*    height: 260px;*/
+
 }
 body._home #sidebar .logo {
-  padding-bottom: 160px;
+  /*      padding-bottom: 160px;*/
+
 }
 body._home #sidebar #main_menu ul {
   height: 115px;
@@ -702,58 +729,76 @@ body._total-joint #content .content_text h6 {
 body._total-joint #content .content_text h1 {
   line-height: 1;
 }
-body._trauma #header {
+body._hand-therapy #header {
   background: #aab300;
   height: 100px;
 }
-body._trauma #main_menu ul li a.trauma {
+body._hand-therapy #main_menu ul li a.hand-therapy {
   background: #aab300;
 }
-body._trauma #content .content_text h1,
-body._trauma #content .content_text h2,
-body._trauma #content .content_text h3,
-body._trauma #content .content_text h4,
-body._trauma #content .content_text h5,
-body._trauma #content .content_text h6 {
+body._hand-therapy #content .content_text h1,
+body._hand-therapy #content .content_text h2,
+body._hand-therapy #content .content_text h3,
+body._hand-therapy #content .content_text h4,
+body._hand-therapy #content .content_text h5,
+body._hand-therapy #content .content_text h6 {
   color: #aab300;
 }
-body._trauma #content .content_text h1 {
+body._hand-therapy #content .content_text h1 {
   line-height: 1;
 }
-body._foot-and-ankle #header {
+body._aquatics #header {
   height: 100px;
   background: #a85a4d;
 }
-body._foot-and-ankle #main_menu ul li a.foot-and-ankle {
+body._aquatics #main_menu ul li a.aquatics {
   background: #a85a4d;
 }
-body._foot-and-ankle #content .content_text h1,
-body._foot-and-ankle #content .content_text h2,
-body._foot-and-ankle #content .content_text h3,
-body._foot-and-ankle #content .content_text h4,
-body._foot-and-ankle #content .content_text h5,
-body._foot-and-ankle #content .content_text h6 {
+body._aquatics #content .content_text h1,
+body._aquatics #content .content_text h2,
+body._aquatics #content .content_text h3,
+body._aquatics #content .content_text h4,
+body._aquatics #content .content_text h5,
+body._aquatics #content .content_text h6 {
   color: #a85a4d;
 }
-body._foot-and-ankle #content .content_text h1 {
+body._aquatics #content .content_text h1 {
   line-height: 1;
 }
-body._hand-and-elbow #header {
+body._orthotics #header {
   background: #54bdec;
   height: 100px;
 }
-body._hand-and-elbow #main_menu ul li a.hand-and-elbow {
+body._orthotics #main_menu ul li a.orthotics {
   background: #54bdec;
 }
-body._hand-and-elbow #content .content_text h1,
-body._hand-and-elbow #content .content_text h2,
-body._hand-and-elbow #content .content_text h3,
-body._hand-and-elbow #content .content_text h4,
-body._hand-and-elbow #content .content_text h5,
-body._hand-and-elbow #content .content_text h6 {
+body._orthotics #content .content_text h1,
+body._orthotics #content .content_text h2,
+body._orthotics #content .content_text h3,
+body._orthotics #content .content_text h4,
+body._orthotics #content .content_text h5,
+body._orthotics #content .content_text h6 {
   color: #54bdec;
 }
-body._hand-and-elbow #content .content_text h1 {
+body._orthotics #content .content_text h1 {
+  line-height: 1;
+}
+body._other #header {
+  background: #ac94b2;
+  height: 100px;
+}
+body._other #main_menu ul li a.other {
+  background: #ac94b2;
+}
+body._other #content .content_text h1,
+body._other #content .content_text h2,
+body._other #content .content_text h3,
+body._other #content .content_text h4,
+body._other #content .content_text h5,
+body._other #content .content_text h6 {
+  color: #ac94b2;
+}
+body._other #content .content_text h1 {
   line-height: 1;
 }
 #sitemap ul {
